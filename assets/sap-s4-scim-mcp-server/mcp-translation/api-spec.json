@@ -1,0 +1,2191 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "User Management (System for Cross-domain Identity Management (SCIM))",
+    "version": "1.0.0",
+    "description": "The service provides business user details via SCIM protocol. You can use this interface to maintain and retrieve business users. In addition to this, you can assign business roles and business user groups to them."
+  },
+  "externalDocs": {
+    "description": "Business Documentation",
+    "url": "https://help.sap.com/http.svc/ahp2/SAP_S4HANA_CLOUD/2602.latest/EN/3e/7de5f45e65496e87bf4534e477a70d/frameset.htm"
+  },
+  "x-sap-api-type": "REST",
+  "x-sap-shortText": "Read and manage business users from an external system using the System for Cross-Domain Domain Identity Management (SCIM) protocol",
+  "x-sap-software-min-version": "2402",
+  "x-sap-ext-overview": [
+    {
+      "name": "Communication Scenario",
+      "values": [
+        {
+          "text": "System for Cross-domain Identity Management Integration (SAP_COM_0465)",
+          "format": "plain"
+        }
+      ]
+    },
+    {
+      "name": "Authentication Methods",
+      "values": [
+        {
+          "text": "x509",
+          "format": "plain"
+        }
+      ]
+    }
+  ],
+  "security": [
+    {
+      "basicAuthentication": []
+    }
+  ],
+  "servers": [
+    {
+      "url": "https://{host}:{port}/sap/bc/http/sap/aps_iam_api_scim",
+      "variables": {
+        "host": {
+          "default": ""
+        },
+        "port": {
+          "default": ""
+        }
+      }
+    },
+    {
+      "url": "https://sandbox.api.sap.com/s4hanacloud/sap/bc/http/sap/aps_iam_api_scim"
+    }
+  ],
+  "x-servers": [
+    {
+      "url": "https://api.authentication.{Landscape}.hana.ondemand.com",
+      "description": "REST API endpoint for the user management API of the Authorization and Trust Management service.",
+      "templates": {
+        "Landscape": {
+          "description": "Region host. For more information, see [Regions and API Endpoints Available for the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html#f344a57233d34199b2123b9620d0bb41.html)."
+        }
+      }
+    }
+  ],
+  "x-sap-extensible": {
+    "supported": "no"
+  },
+  "tags": [
+    {
+      "name": "SCIM Users - Business Users"
+    },
+    {
+      "name": "SCIM Groups - Business Roles or Business User Groups"
+    },
+    {
+      "name": "SCIM Detail Information"
+    }
+  ],
+  "paths": {
+    "/Users": {
+      "get": {
+        "tags": [
+          "SCIM Users - Business Users"
+        ],
+        "summary": "Returns all users of the system.",
+        "operationId": "getAllUsersUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "filter",
+            "description": "Filter items by property values, see [Filtering](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.2).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sortBy",
+            "description": "Sort items by property value, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sortOrder",
+            "description": "Sort order of items, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "startIndex",
+            "description": "Start index within list response, see [Pagination](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "count",
+            "description": "Count of items shown in list response, see [Pagination](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "description": "Attributes to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "excludedAttributes",
+            "description": "Attributes not to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The API returns the list of users.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimGetUsers"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was poorly formed.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no users could be found that match your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "SCIM Users - Business Users"
+        ],
+        "summary": "Creates a user with the properties specified in the body.",
+        "operationId": "createUserUsingPOST",
+        "requestBody": {
+          "description": "The content of the user.",
+          "required": true,
+          "content": {
+            "application/scim+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimPostUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created - The API created the user.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimGetUser"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was poorly formed.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "403": {
+            "description": "Forbidden - Access denied. A valid CSRF Token is missing."
+          },
+          "409": {
+            "description": "Conflict - The SCIM resource already exists.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Something unexpected happened.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Users/{Id}": {
+      "get": {
+        "tags": [
+          "SCIM Users - Business Users"
+        ],
+        "summary": "Returns a user specified by the ID.",
+        "operationId": "getUserUsingGET",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "description": "The ID of the user.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sortBy",
+            "description": "Sort items by property value, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sortOrder",
+            "description": "Sort order of items, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "description": "Attributes to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "excludedAttributes",
+            "description": "Attributes not to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The API returns the specified user.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimGetUser"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no user could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "SCIM Users - Business Users"
+        ],
+        "summary": "Updates all fields of a user specified by the ID.",
+        "operationId": "updateUserUsingPUT",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "description": "The ID of the user.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The content of the user.",
+          "required": true,
+          "content": {
+            "application/scim+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimPutUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok - The API updated the user.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimGetUser"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was poorly formed.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "403": {
+            "description": "Forbidden - Access denied. A valid CSRF Token is missing."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no user could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict - You attempted to update the wrong version of the object. Check the value of If-Match.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "SCIM Users - Business Users"
+        ],
+        "summary": "Updates only the specified fields of a user specified by the ID.",
+        "operationId": "patchUserUsingPATCH",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "description": "The ID of the user.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The content of the user to patch.",
+          "required": true,
+          "content": {
+            "application/scim+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimPatchUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok - The API updated the user.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimGetUser"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was poorly formed.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "403": {
+            "description": "Forbidden - Access denied. A valid CSRF Token is missing."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no user could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict - You attempted to update the wrong version of the object. Check the value of If-Match.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "SCIM Users - Business Users"
+        ],
+        "summary": "Deletes a user specified by the ID.",
+        "operationId": "deleteUserUsingDELETE",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "description": "The ID of the user.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - The API deleted the user."
+          },
+          "400": {
+            "description": "Bad Request - The request was poorly formed.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "403": {
+            "description": "Forbidden - Access denied. A valid CSRF Token is missing."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no user could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Groups": {
+      "get": {
+        "tags": [
+          "SCIM Groups - Business Roles or Business User Groups"
+        ],
+        "summary": "Returns all groups of the system.",
+        "operationId": "getAllGroupsUsingGET",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "filter",
+            "description": "Filter items by property values, see [Filtering](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.2).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sortBy",
+            "description": "Sort items by property value, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sortOrder",
+            "description": "Sort order of items, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "startIndex",
+            "description": "Start index within list response, see [Pagination](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "count",
+            "description": "Count of items shown in list response, see [Pagination](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "description": "Attributes to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "excludedAttributes",
+            "description": "Attributes not to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The API returns the list of groups.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimGetGroups"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was poorly formed.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no groups could be found that match your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "SCIM Groups - Business Roles or Business User Groups"
+        ],
+        "summary": "Creates a group with the properties specified in the body.",
+        "operationId": "createGroupUsingPOST",
+        "requestBody": {
+          "description": "The content of the group.",
+          "required": true,
+          "content": {
+            "application/scim+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimPostGroup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created - The API created the group.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimGetGroup"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was poorly formed.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "403": {
+            "description": "Forbidden - Access denied. A valid CSRF Token is missing."
+          },
+          "409": {
+            "description": "Conflict - The SCIM resource already exists.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - Something unexpected happened.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented - Request not implemented.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Groups/{Id}": {
+      "get": {
+        "tags": [
+          "SCIM Groups - Business Roles or Business User Groups"
+        ],
+        "summary": "Returns a group specified by the ID.",
+        "operationId": "getGroupUsingGET",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "description": "The ID of the group.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sortBy",
+            "description": "Sort items by property value, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sortOrder",
+            "description": "Sort order of items, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "description": "Attributes to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "excludedAttributes",
+            "description": "Attributes not to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The API returns the specified group.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimGetGroup"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no group could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "SCIM Groups - Business Roles or Business User Groups"
+        ],
+        "summary": "Updates all fields of a group specified by the ID.",
+        "operationId": "updateGroupUsingPUT",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "description": "The ID of the group.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The content of the group.",
+          "required": true,
+          "content": {
+            "application/scim+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimPutGroup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok - The API updated the group.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimGetGroup"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was poorly formed.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "403": {
+            "description": "Forbidden - Access denied. A valid CSRF Token is missing."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no group could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict - You attempted to update the wrong version of the object. Check the value of If-Match.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "SCIM Groups - Business Roles or Business User Groups"
+        ],
+        "summary": "Updates only the specified fields of a group specified by the ID.",
+        "operationId": "patchGroupUsingPATCH",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "description": "The ID of the group.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The content of the group to patch.",
+          "required": true,
+          "content": {
+            "application/scim+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimPatchGroup"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ok - The API updated the group.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimGetGroup"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request was poorly formed.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "403": {
+            "description": "Forbidden - Access denied. A valid CSRF Token is missing."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no group could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "SCIM Groups - Business Roles or Business User Groups"
+        ],
+        "summary": "Deletes a group specified by the ID.",
+        "operationId": "deleteGroupUsingDELETE",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "description": "The ID of the group.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - The API deleted the group."
+          },
+          "400": {
+            "description": "Bad Request - The request was poorly formed.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "403": {
+            "description": "Forbidden - Access denied. A valid CSRF Token is missing."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no group could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          },
+          "501": {
+            "description": "Not Implemented - Request not implemented.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/ServiceProviderConfig": {
+      "get": {
+        "tags": [
+          "SCIM Detail Information"
+        ],
+        "summary": "Returns information about the service provider.",
+        "operationId": "getServiceProviderConfigurationUsingGET",
+        "responses": {
+          "200": {
+            "description": "OK - The API returns the service provider configuration."
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no group could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Schemas": {
+      "get": {
+        "tags": [
+          "SCIM Detail Information"
+        ],
+        "summary": "Returns all schemas of the system.",
+        "operationId": "getAllSchemasUsingGET",
+        "responses": {
+          "200": {
+            "description": "OK - The API returns the list of schemas."
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no group could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/Schemas/{Id}": {
+      "get": {
+        "tags": [
+          "SCIM Detail Information"
+        ],
+        "summary": "Returns a schema specified by the ID.",
+        "operationId": "getSchemasUsingGET",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "description": "The ID of the schema.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The API returns the specified schema."
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no group could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/ResourceTypes": {
+      "get": {
+        "tags": [
+          "SCIM Detail Information"
+        ],
+        "summary": "Returns all resource types of the system.",
+        "operationId": "getAllResourceTypesUsingGET",
+        "responses": {
+          "200": {
+            "description": "OK - The API returns the list of resource types."
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no group could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/ResourceTypes/{Id}": {
+      "get": {
+        "tags": [
+          "SCIM Detail Information"
+        ],
+        "summary": "Returns a resource type specified by the ID.",
+        "operationId": "getResourceTypesUsingGET",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "description": "The ID of the resource type.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The API returns the specified resource type."
+          },
+          "401": {
+            "description": "Unauthorized - Access denied. Your authentication credentials have been refused."
+          },
+          "404": {
+            "description": "Not Found - Possible reasons, no group could be found that matches your request.",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generic.error"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "basicAuthentication": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    },
+    "schemas": {
+      "generic.error": {
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "urn:ietf:params:scim:api:messages:2.0:Error"
+              ]
+            }
+          },
+          "detail": {
+            "type": "string",
+            "description": "Detailed Error description."
+          },
+          "status": {
+            "type": "string",
+            "example": "400",
+            "description": "Returned HTTP STatus."
+          }
+        }
+      },
+      "Email": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A label indicating the attribute''s function.",
+            "enum": [
+              "work"
+            ]
+          },
+          "value": {
+            "type": "string",
+            "example": "max.mustermann@sap.com",
+            "description": "Email addresses for the user."
+          },
+          "primary": {
+            "type": "boolean",
+            "description": "A Boolean value indicating the ''primary'' or preferred attribute value."
+          }
+        },
+        "title": "Email"
+      },
+      "PhoneNumber": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "A label indicating the attribute''s function.",
+            "enum": [
+              "work",
+              "mobile",
+              "fax"
+            ]
+          },
+          "value": {
+            "type": "string",
+            "example": "+49123456789",
+            "description": "Phone numbers for the user."
+          }
+        },
+        "title": "PhoneNumber"
+      },
+      "Name": {
+        "type": "object",
+        "properties": {
+          "formatted": {
+            "type": "string",
+            "example": "Mr. Max Peter Mustermann",
+            "description": "The full name, including all middle names, titles and suffixes."
+          },
+          "familyName": {
+            "type": "string",
+            "example": "Mustermann",
+            "description": "The family or last name of the user."
+          },
+          "givenName": {
+            "type": "string",
+            "example": "Max",
+            "description": "The given or first name of the user."
+          },
+          "middleName": {
+            "type": "string",
+            "example": "Peter",
+            "description": "The middle name of the user."
+          },
+          "honorificPrefix": {
+            "type": "string",
+            "description": "The honorific prefix of the user.",
+            "enum": [
+              "Ms.",
+              "Mr."
+            ]
+          }
+        },
+        "title": "Name"
+      },
+      "Group": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "authorization",
+            "description": "The type of the corresponding group.",
+            "enum": [
+              "authorization",
+              "userGroup"
+            ]
+          },
+          "value": {
+            "type": "string",
+            "example": "BROL_ADMIN_ROLE",
+            "description": "The identifier of the User''s group."
+          },
+          "$ref": {
+            "type": "string",
+            "description": "The URI of the corresponding group."
+          },
+          "display": {
+            "type": "string",
+            "example": "Admin",
+            "description": "A human-readable name for the group."
+          }
+        },
+        "title": "Group"
+      },
+      "Member": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "example": "CB0000000001",
+            "description": "The identifier of the user."
+          },
+          "$ref": {
+            "type": "string",
+            "description": "The URI of the corresponding member."
+          },
+          "display": {
+            "type": "string",
+            "example": "Max Mustermann",
+            "description": "The formatted name of the user."
+          }
+        },
+        "title": "Member"
+      },
+      "SAPUserExtension": {
+        "type": "object",
+        "properties": {
+          "validFrom": {
+            "type": "string",
+            "description": "Start of user validity.",
+            "format": "date-time"
+          },
+          "validTo": {
+            "type": "string",
+            "description": "End of user validity.",
+            "format": "date-time"
+          },
+          "loginTime": {
+            "type": "string",
+            "description": "Last logon of user.",
+            "format": "date-time"
+          },
+          "userUuid": {
+            "type": "string",
+            "example": "USER_GLOBAL",
+            "description": "Global User ID of the user."
+          },
+          "userUuidHistory": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SAPUserExtensionUserUuidHistory"
+            }
+          },
+          "language": {
+            "$ref": "#/components/schemas/SAPUserExtensionLanguage"
+          },
+          "localeSettings": {
+            "$ref": "#/components/schemas/SAPUserExtensionLocaleSettings"
+          }
+        },
+        "title": "SAPUserExtension"
+      },
+      "SAPUserERPWorkerExtension": {
+        "type": "object",
+        "properties": {
+          "personalInformation": {
+            "$ref": "#/components/schemas/SAPUserERPWorkerExtensionPersInfo"
+          },
+          "validity": {
+            "$ref": "#/components/schemas/SAPUserERPWorkerExtensionValidity"
+          },
+          "workplace": {
+            "$ref": "#/components/schemas/SAPUserERPWorkerExtensionWorkplace"
+          }
+        },
+        "title": "SAPUserERPWorkerExtension"
+      },
+      "SAPGroupExtension": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "authorization",
+            "description": "The type of the corresponding group.",
+            "enum": [
+              "authorization",
+              "userGroup"
+            ]
+          },
+          "supportedOperations": {
+            "type": "string",
+            "example": "membership",
+            "description": "Supported Operations for the group.",
+            "enum": [
+              "membership",
+              "readWrite"
+            ]
+          }
+        },
+        "title": "SAPGroupExtension"
+      },
+      "SAPUserExtensionUserUuidHistory": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "example": "USER_GLOBAL_HIST",
+            "description": "Global User ID once assigned to the user."
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Flag if Global User ID currently used."
+          }
+        },
+        "title": "SAPUserExtensionUserUuidHistory"
+      },
+      "SAPUserExtensionLanguage": {
+        "type": "object",
+        "properties": {
+          "correspondence": {
+            "type": "string",
+            "example": "EN",
+            "description": "Correspondence language."
+          }
+        },
+        "title": "SAPUserExtensionLanguage"
+      },
+      "SAPUserExtensionLocaleSettings": {
+        "type": "object",
+        "properties": {
+          "numericalRepresentation": {
+            "type": "string",
+            "description": "Numerical representation.",
+            "enum": [
+              "1,234,567.89",
+              "1.234.567,89",
+              "1 234 567,89"
+            ]
+          },
+          "date": {
+            "type": "string",
+            "description": "Date format.",
+            "enum": [
+              "GYY/MM/DD (Japanese Date)",
+              "YYYY/MM/DD (Islamic Date 2)",
+              "DD.MM.YYYY (Gregorian Date)",
+              "YYYY/MM/DD (Iranian Date)",
+              "YYYY/MM/DD (Gregorian Date)",
+              "YYYY-MM-DD (Gregorian Date, ISO 8601)",
+              "YYYY/MM/DD (Islamic Date 1)",
+              "MM/DD/YYYY (Gregorian Date)",
+              "YYYY.MM.DD (Gregorian Date)",
+              "GYY-MM-DD (Japanese Date)",
+              "MM-DD-YYYY (Gregorian Date)",
+              "GYY.MM.DD (Japanese Date)"
+            ]
+          },
+          "time": {
+            "type": "string",
+            "description": "Time format.",
+            "enum": [
+              "24 Hour Format (Example: 12:05:10)",
+              "12 Hour Format (Example: 12:05:10 PM)",
+              "Hours from 0 to 11 (Example: 00:05:10 pm)",
+              "Hours from 0 to 11 (Example: 00:05:10 PM)",
+              "12 Hour Format (Example: 12:05:10 pm)"
+            ]
+          }
+        },
+        "title": "SAPUserExtensionLocaleSettings"
+      },
+      "SAPUserERPWorkerExtensionPersInfo": {
+        "type": "object",
+        "properties": {
+          "additionalLastName": {
+            "type": "string",
+            "example": "Musterextra",
+            "description": "Additional last name of the user."
+          },
+          "birthName": {
+            "type": "string",
+            "example": "Geburtsname",
+            "description": "Birth name of the user."
+          },
+          "initials": {
+            "type": "string",
+            "example": "MM",
+            "description": "Initials of the user."
+          },
+          "lastNamePrefix": {
+            "type": "string",
+            "description": "Last name prefix of the user.",
+            "enum": [
+              "von",
+              "von der",
+              "van",
+              "van der",
+              "da",
+              "de",
+              "de la",
+              "dos",
+              "du",
+              "el"
+            ]
+          },
+          "lastNameSecondPrefix": {
+            "type": "string",
+            "description": "Second last name prefix of the user.",
+            "enum": [
+              "von",
+              "von der",
+              "van",
+              "van der",
+              "da",
+              "de",
+              "de la",
+              "dos",
+              "du",
+              "el"
+            ]
+          },
+          "nameSupplement": {
+            "type": "string",
+            "description": "Supplement to the name field.",
+            "enum": [
+              "Graf",
+              "Gräfin",
+              "Freiherr",
+              "Freifrau",
+              "Earl",
+              "Sir",
+              "Fürst",
+              "Fürstin"
+            ]
+          },
+          "academicSecondTitle": {
+            "type": "string",
+            "description": "Academic second title of the user.",
+            "enum": [
+              "Dr.",
+              "Prof.",
+              "Prof. Dr.",
+              "B.A.",
+              "MBA",
+              "Ph.D."
+            ]
+          }
+        },
+        "title": "SAPUserERPWorkerExtensionPersInfo"
+      },
+      "SAPUserERPWorkerExtensionValidity": {
+        "type": "object",
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "description": "Start of worker validity.",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "End of worker validity.",
+            "format": "date-time"
+          }
+        },
+        "title": "SAPUserERPWorkerExtensionValidity"
+      },
+      "SAPUserERPWorkerExtensionWorkplace": {
+        "type": "object",
+        "properties": {
+          "functionalTitleName": {
+            "type": "string",
+            "example": "Functional Title Name",
+            "description": "Functional title name."
+          }
+        },
+        "title": "SAPUserERPWorkerExtensionWorkplace"
+      },
+      "ScimMeta": {
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string",
+            "example": "User",
+            "description": "Resource Type."
+          },
+          "created": {
+            "type": "string",
+            "description": "Creation date of object.",
+            "format": "date-time"
+          },
+          "lastModified": {
+            "type": "string",
+            "description": "Last changed date of object.",
+            "format": "date-time"
+          },
+          "version": {
+            "type": "string",
+            "description": "The ETAG of the object."
+          },
+          "location": {
+            "type": "string",
+            "description": "The URI of the corresponding object."
+          }
+        },
+        "title": "ScimMeta"
+      },
+      "ScimGetUser": {
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "urn:ietf:params:scim:schemas:core:2.0:User",
+                "urn:ietf:params:scim:schemas:extension:sap.erp.worker:2.0:User",
+                "urn:ietf:params:scim:schemas:extension:sap:2.0:User"
+              ]
+            }
+          },
+          "id": {
+            "type": "string",
+            "example": "CB0000000001",
+            "description": "The user ID of a SCIM User."
+          },
+          "externalId": {
+            "type": "string",
+            "example": "USER_NAME"
+          },
+          "displayName": {
+            "type": "string",
+            "example": "Mr. Max Peter Mustermann",
+            "description": "The name of the user, same as formatted name."
+          },
+          "userName": {
+            "type": "string",
+            "example": "USER_NAME",
+            "description": "Unique identifier for the User."
+          },
+          "name": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "nickName": {
+            "type": "string",
+            "example": "Max",
+            "description": "The casual way to address the user in real life."
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Email"
+            }
+          },
+          "phoneNumbers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PhoneNumber"
+            }
+          },
+          "userType": {
+            "type": "string",
+            "description": "Used to identify the relationship between the organization and the user.",
+            "enum": [
+              "Employee",
+              "Service Performer"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "description": "Academic title of the user.",
+            "enum": [
+              "Dr.",
+              "Prof.",
+              "Prof. Dr.",
+              "B.A.",
+              "MBA",
+              "Ph.D."
+            ]
+          },
+          "preferredLanguage": {
+            "type": "string",
+            "example": "DE",
+            "description": "Indicates the User''s preferred written or spoken language."
+          },
+          "timezone": {
+            "type": "string",
+            "example": "Europe/Berlin",
+            "description": "The User''s time zone."
+          },
+          "active": {
+            "type": "boolean",
+            "description": "A Boolean value indicating the User''s administrative status."
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Group"
+            }
+          },
+          "urn:ietf:params:scim:schemas:extension:sap:2.0:User": {
+            "$ref": "#/components/schemas/SAPUserExtension"
+          },
+          "urn:ietf:params:scim:schemas:extension:sap.erp.worker:2.0:User": {
+            "$ref": "#/components/schemas/SAPUserERPWorkerExtension"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ScimMeta"
+          }
+        },
+        "title": "ScimGetUser"
+      },
+      "ScimPostUser": {
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "urn:ietf:params:scim:schemas:core:2.0:User",
+                "urn:ietf:params:scim:schemas:extension:sap.erp.worker:2.0:User",
+                "urn:ietf:params:scim:schemas:extension:sap:2.0:User"
+              ]
+            }
+          },
+          "externalId": {
+            "type": "string",
+            "example": "USER_NAME"
+          },
+          "displayName": {
+            "type": "string",
+            "example": "Mr. Max Peter Mustermann",
+            "description": "The name of the user, same as formatted name."
+          },
+          "userName": {
+            "type": "string",
+            "example": "USER_NAME",
+            "description": "Unique identifier for the User."
+          },
+          "name": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "nickName": {
+            "type": "string",
+            "example": "Max",
+            "description": "The casual way to address the user in real life."
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Email"
+            }
+          },
+          "phoneNumbers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PhoneNumber"
+            }
+          },
+          "userType": {
+            "type": "string",
+            "description": "Used to identify the relationship between the organization and the user.",
+            "enum": [
+              "Employee",
+              "Service Performer"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "description": "Academic title of the user.",
+            "enum": [
+              "Dr.",
+              "Prof.",
+              "Prof. Dr.",
+              "B.A.",
+              "MBA",
+              "Ph.D."
+            ]
+          },
+          "preferredLanguage": {
+            "type": "string",
+            "example": "DE",
+            "description": "Indicates the User''s preferred written or spoken language."
+          },
+          "locale": {
+            "type": "string",
+            "example": "DE",
+            "description": "Locale indicator of the user setting locale settings."
+          },
+          "timezone": {
+            "type": "string",
+            "example": "Europe/Berlin",
+            "description": "The User''s time zone."
+          },
+          "active": {
+            "type": "boolean",
+            "description": "A Boolean value indicating the User''s administrative status."
+          },
+          "urn:ietf:params:scim:schemas:extension:sap:2.0:User": {
+            "$ref": "#/components/schemas/SAPUserExtension"
+          },
+          "urn:ietf:params:scim:schemas:extension:sap.erp.worker:2.0:User": {
+            "$ref": "#/components/schemas/SAPUserERPWorkerExtension"
+          }
+        },
+        "title": "ScimPostUser"
+      },
+      "ScimPutUser": {
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "urn:ietf:params:scim:schemas:core:2.0:User",
+                "urn:ietf:params:scim:schemas:extension:sap.erp.worker:2.0:User",
+                "urn:ietf:params:scim:schemas:extension:sap:2.0:User"
+              ]
+            }
+          },
+          "id": {
+            "type": "string",
+            "example": "CB0000000001",
+            "description": "The user ID of a SCIM User."
+          },
+          "externalId": {
+            "type": "string",
+            "example": "USER_NAME"
+          },
+          "displayName": {
+            "type": "string",
+            "example": "Mr. Max Peter Mustermann",
+            "description": "The name of the user, same as formatted name."
+          },
+          "userName": {
+            "type": "string",
+            "example": "USER_NAME",
+            "description": "Unique identifier for the User."
+          },
+          "name": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "nickName": {
+            "type": "string",
+            "example": "Max",
+            "description": "The casual way to address the user in real life."
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Email"
+            }
+          },
+          "phoneNumbers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PhoneNumber"
+            }
+          },
+          "userType": {
+            "type": "string",
+            "description": "Used to identify the relationship between the organization and the user.",
+            "enum": [
+              "Employee",
+              "Service Performer"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "description": "Academic title of the user.",
+            "enum": [
+              "Dr.",
+              "Prof.",
+              "Prof. Dr.",
+              "B.A.",
+              "MBA",
+              "Ph.D."
+            ]
+          },
+          "preferredLanguage": {
+            "type": "string",
+            "example": "DE",
+            "description": "Indicates the User''s preferred written or spoken language."
+          },
+          "locale": {
+            "type": "string",
+            "example": "DE",
+            "description": "Locale indicator of the user setting locale settings."
+          },
+          "timezone": {
+            "type": "string",
+            "example": "Europe/Berlin",
+            "description": "The User''s time zone."
+          },
+          "active": {
+            "type": "boolean",
+            "description": "A Boolean value indicating the User''s administrative status."
+          },
+          "urn:ietf:params:scim:schemas:extension:sap:2.0:User": {
+            "$ref": "#/components/schemas/SAPUserExtension"
+          },
+          "urn:ietf:params:scim:schemas:extension:sap.erp.worker:2.0:User": {
+            "$ref": "#/components/schemas/SAPUserERPWorkerExtension"
+          }
+        },
+        "title": "ScimPutUser"
+      },
+      "ScimGetUsers": {
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "urn:ietf:params:scim:api:messages:2.0:ListResponse"
+              ]
+            }
+          },
+          "totalResults": {
+            "type": "integer",
+            "example": "110",
+            "description": "Total results of the list response."
+          },
+          "itemsPerPage": {
+            "type": "integer",
+            "example": "10",
+            "description": "Amount of shown list response objects."
+          },
+          "startIndex": {
+            "type": "integer",
+            "example": "1",
+            "description": "Start Index of shown list response objects."
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScimGetUser"
+            }
+          }
+        },
+        "title": "ScimGetUsers"
+      },
+      "ScimGetGroup": {
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "urn:ietf:params:scim:schemas:core:2.0:Group",
+                "urn:ietf:params:scim:schemas:extension:sap:2.0:Group"
+              ]
+            }
+          },
+          "id": {
+            "type": "string",
+            "example": "BROL_ADMIN_ROLE",
+            "description": "The identifier of the User''s group."
+          },
+          "externalId": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string",
+            "example": "Admin",
+            "description": "A human-readable name for the group."
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Member"
+            }
+          },
+          "urn:ietf:params:scim:schemas:extension:sap:2.0:Group": {
+            "$ref": "#/components/schemas/SAPGroupExtension"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ScimMeta"
+          }
+        },
+        "title": "ScimGetGroup"
+      },
+      "ScimPostGroup": {
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "urn:ietf:params:scim:schemas:core:2.0:Group",
+                "urn:ietf:params:scim:schemas:extension:sap:2.0:Group"
+              ]
+            }
+          },
+          "externalId": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string",
+            "example": "Admin",
+            "description": "A human-readable name for the group."
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Member"
+            }
+          },
+          "urn:ietf:params:scim:schemas:extension:sap:2.0:Group": {
+            "$ref": "#/components/schemas/SAPGroupExtension"
+          }
+        },
+        "title": "ScimPostGroup"
+      },
+      "ScimPutGroup": {
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "urn:ietf:params:scim:schemas:core:2.0:Group",
+                "urn:ietf:params:scim:schemas:extension:sap:2.0:Group"
+              ]
+            }
+          },
+          "id": {
+            "type": "string",
+            "example": "BROL_ADMIN_ROLE",
+            "description": "The identifier of the User''s group."
+          },
+          "externalId": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string",
+            "example": "Admin",
+            "description": "A human-readable name for the group."
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Member"
+            }
+          },
+          "urn:ietf:params:scim:schemas:extension:sap:2.0:Group": {
+            "$ref": "#/components/schemas/SAPGroupExtension"
+          }
+        },
+        "title": "ScimPutGroup"
+      },
+      "ScimGetGroups": {
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "urn:ietf:params:scim:api:messages:2.0:ListResponse"
+              ]
+            }
+          },
+          "totalResults": {
+            "type": "integer",
+            "example": "110",
+            "description": "Total results of the list response."
+          },
+          "itemsPerPage": {
+            "type": "integer",
+            "example": "10",
+            "description": "Amount of shown list response objects."
+          },
+          "startIndex": {
+            "type": "integer",
+            "example": "1",
+            "description": "Start Index of shown list response objects."
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScimGetGroup"
+            }
+          }
+        },
+        "title": "ScimGetGroups"
+      },
+      "PatchUser": {
+        "type": "object",
+        "properties": {
+          "op": {
+            "type": "string",
+            "description": "The type of change.",
+            "enum": [
+              "add",
+              "remove",
+              "replace"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "description": "Name of component which is to be changed."
+          },
+          "value": {
+            "$ref": "#/components/schemas/ScimPostUser"
+          }
+        },
+        "title": "PatchUser"
+      },
+      "PatchGroup": {
+        "type": "object",
+        "properties": {
+          "op": {
+            "type": "string",
+            "description": "The type of change.",
+            "enum": [
+              "add",
+              "remove",
+              "replace"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "description": "Name of component which is to be changed."
+          },
+          "value": {
+            "$ref": "#/components/schemas/ScimPostGroup"
+          }
+        },
+        "title": "PatchGroup"
+      },
+      "ScimPatchUser": {
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+              ]
+            }
+          },
+          "Operations": {
+            "$ref": "#/components/schemas/PatchUser"
+          }
+        },
+        "title": "ScimPatchUser"
+      },
+      "ScimPatchGroup": {
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+              ]
+            }
+          },
+          "Operations": {
+            "$ref": "#/components/schemas/PatchGroup"
+          }
+        },
+        "title": "ScimPatchGroup"
+      }
+    }
+  }
+}

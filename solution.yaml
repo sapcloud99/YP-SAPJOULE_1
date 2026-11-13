@@ -1,0 +1,17 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: sap-role-optimization-6f66f
+  version: "1.0.0"
+  description: >
+    AI agent that analyzes SAP user roles across BTP, On-Premise, Cloud, and
+    multi-tenant environments, detects SoD conflicts, identifies single-holder
+    critical roles, recommends backup users, and optimizes role assignments by
+    functional category.
+
+assets:
+  - ref: ./assets/sap-role-optimization-agent/asset.yaml
+  - ref: ./assets/sap-s4-business-role-mcp-server/asset.yaml
+  - ref: ./assets/sap-s4-business-role-changes-mcp-server/asset.yaml
+  - ref: ./assets/sap-s4-scim-mcp-server/asset.yaml

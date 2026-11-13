@@ -1,0 +1,7 @@
+{
+  "include": ["app"],
+  "extraPaths": ["app"],
+  "pythonVersion": "3.13",
+  "reportMissingImports": false,
+  "reportMissingModuleSource": false
+}

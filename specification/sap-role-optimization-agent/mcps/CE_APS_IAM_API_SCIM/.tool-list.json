@@ -1,0 +1,1015 @@
+[
+  {
+    "name": "getAllUsersUsingGET",
+    "title": "getAllUsersUsingGET",
+    "description": "Returns all users of the system.",
+    "openApiType": {
+      "operationId": "getAllUsersUsingGET",
+      "parameters": [
+        {
+          "name": "filter",
+          "description": "Filter items by property values, see [Filtering](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.2).",
+          "in": "query",
+          "newParameterName": "filter"
+        },
+        {
+          "name": "sortBy",
+          "description": "Sort items by property value, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+          "in": "query",
+          "newParameterName": "sortby"
+        },
+        {
+          "name": "sortOrder",
+          "description": "Sort order of items, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+          "in": "query",
+          "newParameterName": "sortorder"
+        },
+        {
+          "name": "startIndex",
+          "description": "Start index within list response, see [Pagination](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4).",
+          "in": "query",
+          "newParameterName": "startindex"
+        },
+        {
+          "name": "count",
+          "description": "Count of items shown in list response, see [Pagination](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4).",
+          "in": "query",
+          "newParameterName": "count"
+        },
+        {
+          "name": "attributes",
+          "description": "Attributes to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+          "in": "query",
+          "newParameterName": "attributes"
+        },
+        {
+          "name": "excludedAttributes",
+          "description": "Attributes not to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+          "in": "query",
+          "newParameterName": "excludedattributes"
+        }
+      ],
+      "requestBody": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "createUserUsingPOST",
+    "title": "createUserUsingPOST",
+    "description": "Creates a user with the properties specified in the body.",
+    "openApiType": {
+      "operationId": "createUserUsingPOST",
+      "parameters": [
+        {
+          "name": "body",
+          "description": "The content of the user.",
+          "newParameterName": "body"
+        }
+      ],
+      "requestBody": {
+        "contentType": "application/scim+json"
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "getUserUsingGET",
+    "title": "getUserUsingGET",
+    "description": "Returns a user specified by the ID.",
+    "openApiType": {
+      "operationId": "getUserUsingGET",
+      "parameters": [
+        {
+          "name": "Id",
+          "description": "The ID of the user.",
+          "in": "path",
+          "newParameterName": "id"
+        },
+        {
+          "name": "sortBy",
+          "description": "Sort items by property value, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+          "in": "query",
+          "newParameterName": "sortby"
+        },
+        {
+          "name": "sortOrder",
+          "description": "Sort order of items, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+          "in": "query",
+          "newParameterName": "sortorder"
+        },
+        {
+          "name": "attributes",
+          "description": "Attributes to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+          "in": "query",
+          "newParameterName": "attributes"
+        },
+        {
+          "name": "excludedAttributes",
+          "description": "Attributes not to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+          "in": "query",
+          "newParameterName": "excludedattributes"
+        }
+      ],
+      "requestBody": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "updateUserUsingPUT",
+    "title": "updateUserUsingPUT",
+    "description": "Updates all fields of a user specified by the ID.",
+    "openApiType": {
+      "operationId": "updateUserUsingPUT",
+      "parameters": [
+        {
+          "name": "body",
+          "description": "The content of the user.",
+          "newParameterName": "body"
+        },
+        {
+          "name": "Id",
+          "description": "The ID of the user.",
+          "in": "path",
+          "newParameterName": "id"
+        }
+      ],
+      "requestBody": {
+        "contentType": "application/scim+json"
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "deleteUserUsingDELETE",
+    "title": "deleteUserUsingDELETE",
+    "description": "Deletes a user specified by the ID.",
+    "openApiType": {
+      "operationId": "deleteUserUsingDELETE",
+      "parameters": [
+        {
+          "name": "Id",
+          "description": "The ID of the user.",
+          "in": "path",
+          "newParameterName": "id"
+        }
+      ],
+      "requestBody": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "patchUserUsingPATCH",
+    "title": "patchUserUsingPATCH",
+    "description": "Updates only the specified fields of a user specified by the ID.",
+    "openApiType": {
+      "operationId": "patchUserUsingPATCH",
+      "parameters": [
+        {
+          "name": "body",
+          "description": "The content of the user to patch.",
+          "newParameterName": "body"
+        },
+        {
+          "name": "Id",
+          "description": "The ID of the user.",
+          "in": "path",
+          "newParameterName": "id"
+        }
+      ],
+      "requestBody": {
+        "contentType": "application/scim+json"
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "getAllGroupsUsingGET",
+    "title": "getAllGroupsUsingGET",
+    "description": "Returns all groups of the system.",
+    "openApiType": {
+      "operationId": "getAllGroupsUsingGET",
+      "parameters": [
+        {
+          "name": "filter",
+          "description": "Filter items by property values, see [Filtering](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.2).",
+          "in": "query",
+          "newParameterName": "filter"
+        },
+        {
+          "name": "sortBy",
+          "description": "Sort items by property value, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+          "in": "query",
+          "newParameterName": "sortby"
+        },
+        {
+          "name": "sortOrder",
+          "description": "Sort order of items, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+          "in": "query",
+          "newParameterName": "sortorder"
+        },
+        {
+          "name": "startIndex",
+          "description": "Start index within list response, see [Pagination](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4).",
+          "in": "query",
+          "newParameterName": "startindex"
+        },
+        {
+          "name": "count",
+          "description": "Count of items shown in list response, see [Pagination](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.4).",
+          "in": "query",
+          "newParameterName": "count"
+        },
+        {
+          "name": "attributes",
+          "description": "Attributes to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+          "in": "query",
+          "newParameterName": "attributes"
+        },
+        {
+          "name": "excludedAttributes",
+          "description": "Attributes not to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+          "in": "query",
+          "newParameterName": "excludedattributes"
+        }
+      ],
+      "requestBody": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "createGroupUsingPOST",
+    "title": "createGroupUsingPOST",
+    "description": "Creates a group with the properties specified in the body.",
+    "openApiType": {
+      "operationId": "createGroupUsingPOST",
+      "parameters": [
+        {
+          "name": "body",
+          "description": "The content of the group.",
+          "newParameterName": "body"
+        }
+      ],
+      "requestBody": {
+        "contentType": "application/scim+json"
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "getGroupUsingGET",
+    "title": "getGroupUsingGET",
+    "description": "Returns a group specified by the ID.",
+    "openApiType": {
+      "operationId": "getGroupUsingGET",
+      "parameters": [
+        {
+          "name": "Id",
+          "description": "The ID of the group.",
+          "in": "path",
+          "newParameterName": "id"
+        },
+        {
+          "name": "sortBy",
+          "description": "Sort items by property value, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+          "in": "query",
+          "newParameterName": "sortby"
+        },
+        {
+          "name": "sortOrder",
+          "description": "Sort order of items, see [Sorting](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.3).",
+          "in": "query",
+          "newParameterName": "sortorder"
+        },
+        {
+          "name": "attributes",
+          "description": "Attributes to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+          "in": "query",
+          "newParameterName": "attributes"
+        },
+        {
+          "name": "excludedAttributes",
+          "description": "Attributes not to be returned, see [Attributes](https://datatracker.ietf.org/doc/html/rfc7644#section-3.4.2.5).",
+          "in": "query",
+          "newParameterName": "excludedattributes"
+        }
+      ],
+      "requestBody": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "updateGroupUsingPUT",
+    "title": "updateGroupUsingPUT",
+    "description": "Updates all fields of a group specified by the ID.",
+    "openApiType": {
+      "operationId": "updateGroupUsingPUT",
+      "parameters": [
+        {
+          "name": "body",
+          "description": "The content of the group.",
+          "newParameterName": "body"
+        },
+        {
+          "name": "Id",
+          "description": "The ID of the group.",
+          "in": "path",
+          "newParameterName": "id"
+        }
+      ],
+      "requestBody": {
+        "contentType": "application/scim+json"
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "deleteGroupUsingDELETE",
+    "title": "deleteGroupUsingDELETE",
+    "description": "Deletes a group specified by the ID.",
+    "openApiType": {
+      "operationId": "deleteGroupUsingDELETE",
+      "parameters": [
+        {
+          "name": "Id",
+          "description": "The ID of the group.",
+          "in": "path",
+          "newParameterName": "id"
+        }
+      ],
+      "requestBody": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "patchGroupUsingPATCH",
+    "title": "patchGroupUsingPATCH",
+    "description": "Updates only the specified fields of a group specified by the ID.",
+    "openApiType": {
+      "operationId": "patchGroupUsingPATCH",
+      "parameters": [
+        {
+          "name": "body",
+          "description": "The content of the group to patch.",
+          "newParameterName": "body"
+        },
+        {
+          "name": "Id",
+          "description": "The ID of the group.",
+          "in": "path",
+          "newParameterName": "id"
+        }
+      ],
+      "requestBody": {
+        "contentType": "application/scim+json"
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "getServiceProviderConfigurationUsingGET",
+    "title": "getServiceProviderConfigurationUsingGET",
+    "description": "Returns information about the service provider.",
+    "openApiType": {
+      "operationId": "getServiceProviderConfigurationUsingGET",
+      "parameters": [],
+      "requestBody": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "getAllSchemasUsingGET",
+    "title": "getAllSchemasUsingGET",
+    "description": "Returns all schemas of the system.",
+    "openApiType": {
+      "operationId": "getAllSchemasUsingGET",
+      "parameters": [],
+      "requestBody": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "getSchemasUsingGET",
+    "title": "getSchemasUsingGET",
+    "description": "Returns a schema specified by the ID.",
+    "openApiType": {
+      "operationId": "getSchemasUsingGET",
+      "parameters": [
+        {
+          "name": "Id",
+          "description": "The ID of the schema.",
+          "in": "path",
+          "newParameterName": "id"
+        }
+      ],
+      "requestBody": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "getAllResourceTypesUsingGET",
+    "title": "getAllResourceTypesUsingGET",
+    "description": "Returns all resource types of the system.",
+    "openApiType": {
+      "operationId": "getAllResourceTypesUsingGET",
+      "parameters": [],
+      "requestBody": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "getResourceTypesUsingGET",
+    "title": "getResourceTypesUsingGET",
+    "description": "Returns a resource type specified by the ID.",
+    "openApiType": {
+      "operationId": "getResourceTypesUsingGET",
+      "parameters": [
+        {
+          "name": "Id",
+          "description": "The ID of the resource type.",
+          "in": "path",
+          "newParameterName": "id"
+        }
+      ],
+      "requestBody": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  }
+]

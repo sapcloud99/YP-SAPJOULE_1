@@ -1,0 +1,24 @@
+apiVersion: asset.sap/v1
+kind: Asset
+type: mcp-server
+
+metadata:
+  name: sap-s4-business-role-mcp-server
+  description: >
+    Exposes SAP S/4HANA Business Role read operations as MCP tools.
+    Enables the agent to fetch business roles, role assignments, and
+    business catalog data for IAM role analysis.
+  version: "1.0.0"
+  translation: mcp-translation/translation.json
+  apiSpec: mcp-translation/api-spec.edmx
+
+provides:
+  apis:
+    - name: sap-s4-business-role-mcp-server
+      kind: mcp-server
+      ordId: customer.build:apiResource:sap-role-optimization-6f66f.sap-s4-business-role-mcp-server:v1
+
+requires:
+  - name: CE_BUSINESSROLE_0001
+    kind: api
+    ordId: sap.s4:apiResource:CE_BUSINESSROLE_0001:v1

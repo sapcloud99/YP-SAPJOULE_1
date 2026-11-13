@@ -1,0 +1,609 @@
+{
+  "servers": {
+    "sap-s4-business-role": {
+      "mcp_server_name": "sap.mcp/sap_self",
+      "description": "SAP S/4HANA Business Role read operations — lists roles, assignments, and catalogs",
+      "tools": {
+        "list_businessroles_for_sap_self": {
+          "description": "Retrieve a list of SAP S/4HANA business roles.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$top": {"type": "string"},
+              "$filter": {"type": "string"},
+              "$select": {"type": "string"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "value": [
+              {"BusinessRole": "BR_EMPLOYEE_SELF_SERVICE",   "BusinessRoleDescription": "Employee Self-Service",            "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_MANAGER_APPROVE",         "BusinessRoleDescription": "Manager Approval Rights",          "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_MM_PURCHASING_USER",      "BusinessRoleDescription": "Materials Management Purchasing",  "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_FI_ACCOUNTING_USER",      "BusinessRoleDescription": "Financial Accounting User",        "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_CO_COST_CENTER_MANAGER",  "BusinessRoleDescription": "Cost Center Manager",              "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_HR_PAYROLL_USER",         "BusinessRoleDescription": "HR Payroll User",                  "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_SD_SALES_ORDER_PROCESS",  "BusinessRoleDescription": "Sales Order Processing",           "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_PURCHASE_ORDER_CREATE",   "BusinessRoleDescription": "Purchase Order Creator",           "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_PURCHASE_ORDER_APPROVE",  "BusinessRoleDescription": "Purchase Order Approver",          "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_VENDOR_MASTER_ADMIN",     "BusinessRoleDescription": "Vendor Master Administrator",      "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_PAYMENT_PROCESS_EXECUTE", "BusinessRoleDescription": "Payment Processing Executor",      "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_FI_POST_EXECUTE",         "BusinessRoleDescription": "Financial Posting Executor",       "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_PERIOD_CLOSE_ADMIN",      "BusinessRoleDescription": "Period Closing Administrator",     "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_ABAP_DEVELOPER",          "BusinessRoleDescription": "ABAP Developer",                   "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_ABAP_WORKBENCH",          "BusinessRoleDescription": "ABAP Workbench Access",            "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_FIORI_DEVELOPER",         "BusinessRoleDescription": "SAP Fiori Developer",              "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_BTP_DEVELOPER",           "BusinessRoleDescription": "SAP BTP Developer",                "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_API_INTEGRATION",         "BusinessRoleDescription": "API Integration Specialist",       "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_MIDDLEWARE_DEVELOPER",    "BusinessRoleDescription": "Middleware Developer",              "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_EXTENSION_DEVELOPER",     "BusinessRoleDescription": "Extension Developer",              "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_ADMIN",                   "BusinessRoleDescription": "System Administrator",             "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_BASIS_OPS",               "BusinessRoleDescription": "SAP Basis Operations",             "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_TRANSPORT_MANAGER",       "BusinessRoleDescription": "Transport Management",             "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_SYSADMIN_SUPPORT",        "BusinessRoleDescription": "System Administration Support",    "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_RFC_DESTINATION_ADMIN",   "BusinessRoleDescription": "RFC Destination Administrator",    "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_CLIENT_ADMIN",            "BusinessRoleDescription": "SAP Client Administrator",         "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_BATCH_ADMIN",             "BusinessRoleDescription": "Batch Job Administrator",          "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_HELPDESK_AGENT",          "BusinessRoleDescription": "IT Helpdesk Agent",                "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_INCIDENT_MANAGER",        "BusinessRoleDescription": "Incident Manager",                 "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_SUPPORT_L2_SPECIALIST",   "BusinessRoleDescription": "L2 Support Specialist",            "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_SUPPORT_L3_EXPERT",       "BusinessRoleDescription": "L3 Support Expert",                "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_MONITORING_OPS",          "BusinessRoleDescription": "Operations Monitoring",            "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_SERVICE_DESK_AGENT",      "BusinessRoleDescription": "Service Desk Agent",               "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_SECURITY_ADMIN",          "BusinessRoleDescription": "Security Administrator",           "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_AUTH_ADMIN",              "BusinessRoleDescription": "Authorization Administrator",      "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_IAM_GOVERNANCE_USER",     "BusinessRoleDescription": "IAM Governance User",              "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_USER_ADMIN",              "BusinessRoleDescription": "User Administrator",               "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_GRC_ACCESS_CONTROL",      "BusinessRoleDescription": "GRC Access Control",               "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_COMPLIANCE_OFFICER",      "BusinessRoleDescription": "Compliance Officer",               "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_AUDIT_LOG_VIEWER",        "BusinessRoleDescription": "Audit Log Viewer",                 "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_SECURITY_AUDITOR",        "BusinessRoleDescription": "Security Auditor",                 "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_ROLE_ADMIN",              "BusinessRoleDescription": "Role Administrator",               "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_BUSINESS_ROLE_ASSIGN",    "BusinessRoleDescription": "Business Role Assignment",         "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"},
+              {"BusinessRole": "BR_COMPLIANCE_REVIEWER",     "BusinessRoleDescription": "Compliance Reviewer",              "IsBusinessRoleTemplate": false, "UserAssignmentMethod": "Manual"}
+            ]
+          }
+        },
+        "get_businessroles_for_sap_self": {
+          "description": "Retrieve a specific SAP S/4HANA business role by key.",
+          "input_schema": {
+            "type": "object",
+            "properties": {"BusinessRole": {"type": "string"}},
+            "required": ["BusinessRole"]
+          },
+          "mock_response": {
+            "BusinessRole": "BR_ADMIN",
+            "BusinessRoleDescription": "System Administrator",
+            "IsBusinessRoleTemplate": false,
+            "UserAssignmentMethod": "Manual"
+          }
+        },
+        "count_businessroles_for_sap_self": {
+          "description": "Count SAP S/4HANA business roles.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": 44
+        },
+        "list_businessrolebusinessusers_for_sap_self": {
+          "description": "List users assigned to business roles.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$filter": {"type": "string"},
+              "$top": {"type": "string"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "value": [
+              {"BusinessRole": "BR_EMPLOYEE_SELF_SERVICE",   "BusinessUser": "USR001", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_MM_PURCHASING_USER",      "BusinessUser": "USR001", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_EMPLOYEE_SELF_SERVICE",   "BusinessUser": "USR002", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_MANAGER_APPROVE",         "BusinessUser": "USR002", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_CO_COST_CENTER_MANAGER",  "BusinessUser": "USR002", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_HR_PAYROLL_USER",         "BusinessUser": "USR003", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_EMPLOYEE_SELF_SERVICE",   "BusinessUser": "USR003", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_SD_SALES_ORDER_PROCESS",  "BusinessUser": "USR004", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_FI_ACCOUNTING_USER",      "BusinessUser": "USR005", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_CO_COST_CENTER_MANAGER",  "BusinessUser": "USR005", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_PURCHASE_ORDER_CREATE",   "BusinessUser": "USR006", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_PURCHASE_ORDER_APPROVE",  "BusinessUser": "USR006", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_MM_PURCHASING_USER",      "BusinessUser": "USR006", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_FI_POST_EXECUTE",         "BusinessUser": "USR007", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_PERIOD_CLOSE_ADMIN",      "BusinessUser": "USR007", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_FI_ACCOUNTING_USER",      "BusinessUser": "USR007", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_ABAP_DEVELOPER",          "BusinessUser": "USR008", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_ABAP_WORKBENCH",          "BusinessUser": "USR008", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_ABAP_DEVELOPER",          "BusinessUser": "USR009", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_FIORI_DEVELOPER",         "BusinessUser": "USR009", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_BTP_DEVELOPER",           "BusinessUser": "USR010", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_API_INTEGRATION",         "BusinessUser": "USR010", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_MIDDLEWARE_DEVELOPER",    "BusinessUser": "USR011", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_API_INTEGRATION",         "BusinessUser": "USR011", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_EXTENSION_DEVELOPER",     "BusinessUser": "USR012", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_BTP_DEVELOPER",           "BusinessUser": "USR012", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_ABAP_DEVELOPER",          "BusinessUser": "USR013", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_ABAP_WORKBENCH",          "BusinessUser": "USR013", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_FIORI_DEVELOPER",         "BusinessUser": "USR013", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_ADMIN",                   "BusinessUser": "USR014", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_BASIS_OPS",               "BusinessUser": "USR014", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_TRANSPORT_MANAGER",       "BusinessUser": "USR014", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_SYSADMIN_SUPPORT",        "BusinessUser": "USR015", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_RFC_DESTINATION_ADMIN",   "BusinessUser": "USR015", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_BATCH_ADMIN",             "BusinessUser": "USR015", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_TRANSPORT_MANAGER",       "BusinessUser": "USR016", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_BASIS_OPS",               "BusinessUser": "USR016", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_CLIENT_ADMIN",            "BusinessUser": "USR017", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_SYSADMIN_SUPPORT",        "BusinessUser": "USR017", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_BATCH_ADMIN",             "BusinessUser": "USR018", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_BASIS_OPS",               "BusinessUser": "USR018", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_BASIS_OPS",               "BusinessUser": "USR019", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_RFC_DESTINATION_ADMIN",   "BusinessUser": "USR019", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_ABAP_DEVELOPER",          "BusinessUser": "USR019", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_HELPDESK_AGENT",          "BusinessUser": "USR019", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_FI_ACCOUNTING_USER",      "BusinessUser": "USR019", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_EMPLOYEE_SELF_SERVICE",   "BusinessUser": "USR019", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_HELPDESK_AGENT",          "BusinessUser": "USR020", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_INCIDENT_MANAGER",        "BusinessUser": "USR020", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_SUPPORT_L2_SPECIALIST",   "BusinessUser": "USR021", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_HELPDESK_AGENT",          "BusinessUser": "USR021", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_SUPPORT_L3_EXPERT",       "BusinessUser": "USR022", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_MONITORING_OPS",          "BusinessUser": "USR022", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_MONITORING_OPS",          "BusinessUser": "USR023", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_INCIDENT_MANAGER",        "BusinessUser": "USR023", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_SERVICE_DESK_AGENT",      "BusinessUser": "USR024", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_HELPDESK_AGENT",          "BusinessUser": "USR024", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_SECURITY_ADMIN",          "BusinessUser": "USR025", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_AUTH_ADMIN",              "BusinessUser": "USR025", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_IAM_GOVERNANCE_USER",     "BusinessUser": "USR026", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_USER_ADMIN",              "BusinessUser": "USR026", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_GRC_ACCESS_CONTROL",      "BusinessUser": "USR027", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_COMPLIANCE_OFFICER",      "BusinessUser": "USR027", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_AUDIT_LOG_VIEWER",        "BusinessUser": "USR028", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_COMPLIANCE_REVIEWER",     "BusinessUser": "USR028", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_ROLE_ADMIN",              "BusinessUser": "USR029", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_SECURITY_AUDITOR",        "BusinessUser": "USR029", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_BUSINESS_ROLE_ASSIGN",    "BusinessUser": "USR029", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_USER_ADMIN",              "BusinessUser": "USR030", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_AUDIT_LOG_VIEWER",        "BusinessUser": "USR030", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_VENDOR_MASTER_ADMIN",     "BusinessUser": "USR031", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_PAYMENT_PROCESS_EXECUTE", "BusinessUser": "USR031", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_FI_ACCOUNTING_USER",      "BusinessUser": "USR032", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_MM_PURCHASING_USER",      "BusinessUser": "USR032", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"},
+              {"BusinessRole": "BR_MANAGER_APPROVE",         "BusinessUser": "USR032", "ValidFrom": "/Date(1704067200000)/", "ValidTo": "/Date(9999999999000)/"}
+            ]
+          }
+        },
+        "get_businessrolebusinessusers_for_sap_self": {
+          "description": "Get a specific business role-user assignment.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "BusinessRole": {"type": "string"},
+              "BusinessUser": {"type": "string"}
+            },
+            "required": ["BusinessRole", "BusinessUser"]
+          },
+          "mock_response": {
+            "BusinessRole": "BR_ADMIN",
+            "BusinessUser": "USR014",
+            "ValidFrom": "/Date(1704067200000)/",
+            "ValidTo": "/Date(9999999999000)/"
+          }
+        },
+        "count_businessrolebusinessusers_for_sap_self": {
+          "description": "Count business role-user assignments.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": 75
+        },
+        "list_businessrolebusinesscatalogs_for_sap_self": {
+          "description": "List business catalogs assigned to roles.",
+          "input_schema": {"type": "object", "properties": {"$top": {"type": "string"}}, "required": []},
+          "mock_response": {
+            "value": [
+              {"BusinessRole": "BR_ADMIN",           "BusinessCatalog": "SAP_CORE_BC_SEC",   "BusinessCatalogDescription": "Security Administration"},
+              {"BusinessRole": "BR_ABAP_DEVELOPER",  "BusinessCatalog": "SAP_ABAP_BC_DEV",   "BusinessCatalogDescription": "ABAP Development"},
+              {"BusinessRole": "BR_HELPDESK_AGENT",  "BusinessCatalog": "SAP_IT_BC_SVC",     "BusinessCatalogDescription": "IT Service Management"},
+              {"BusinessRole": "BR_SECURITY_ADMIN",  "BusinessCatalog": "SAP_GRC_BC_SEC",    "BusinessCatalogDescription": "GRC Security"},
+              {"BusinessRole": "BR_BTP_DEVELOPER",   "BusinessCatalog": "SAP_BTP_BC_DEV",    "BusinessCatalogDescription": "BTP Development"},
+              {"BusinessRole": "BR_FI_ACCOUNTING_USER", "BusinessCatalog": "SAP_FIN_BC_ACC", "BusinessCatalogDescription": "Financial Accounting"}
+            ]
+          }
+        },
+        "get_businessrolebusinesscatalogs_for_sap_self": {
+          "description": "Get a specific catalog assignment.",
+          "input_schema": {"type": "object", "properties": {"BusinessRole": {"type": "string"}, "BusinessCatalog": {"type": "string"}}, "required": ["BusinessRole", "BusinessCatalog"]},
+          "mock_response": {"BusinessRole": "BR_ADMIN", "BusinessCatalog": "SAP_CORE_BC_SEC"}
+        },
+        "count_businessrolebusinesscatalogs_for_sap_self": {
+          "description": "Count catalog assignments.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": 6
+        },
+        "list_businesscatalogs_in_businessroles_for_sap_self": {
+          "description": "List catalogs within a business role.",
+          "input_schema": {"type": "object", "properties": {"BusinessRole": {"type": "string"}}, "required": ["BusinessRole"]},
+          "mock_response": {"value": [{"BusinessCatalog": "SAP_CORE_BC_SEC", "BusinessCatalogDescription": "Security Administration"}]}
+        },
+        "count_businesscatalogs_in_businessroles_for_sap_self": {
+          "description": "Count catalogs in a role.",
+          "input_schema": {"type": "object", "properties": {"BusinessRole": {"type": "string"}}, "required": []},
+          "mock_response": 1
+        },
+        "list_businessusers_in_businessroles_for_sap_self": {
+          "description": "List users within a business role.",
+          "input_schema": {"type": "object", "properties": {"BusinessRole": {"type": "string"}}, "required": ["BusinessRole"]},
+          "mock_response": {"value": [{"BusinessUser": "USR014"}, {"BusinessUser": "USR015"}, {"BusinessUser": "USR016"}]}
+        },
+        "count_businessusers_in_businessroles_for_sap_self": {
+          "description": "Count users in a role.",
+          "input_schema": {"type": "object", "properties": {"BusinessRole": {"type": "string"}}, "required": []},
+          "mock_response": 3
+        },
+        "list_businessrolederivedroles_for_sap_self": {
+          "description": "List derived roles.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"value": []}
+        },
+        "get_businessrolederivedroles_for_sap_self": {
+          "description": "Get a derived role.",
+          "input_schema": {"type": "object", "properties": {"BusinessRole": {"type": "string"}}, "required": ["BusinessRole"]},
+          "mock_response": {}
+        },
+        "list_businessrolerestrictions_for_sap_self": {
+          "description": "List business role restrictions.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"value": []}
+        },
+        "get_businessrolerestrictions_for_sap_self": {
+          "description": "Get a business role restriction.",
+          "input_schema": {"type": "object", "properties": {"BusinessRole": {"type": "string"}}, "required": ["BusinessRole"]},
+          "mock_response": {}
+        },
+        "get_metadata_sap_self": {
+          "description": "Retrieve OData metadata for schema discovery.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"edmx": "<?xml version=\"1.0\"?><edmx:Edmx Version=\"4.0\"/>"}
+        },
+        "batch_for_sap_self": {
+          "description": "Execute OData $batch requests.",
+          "input_schema": {"type": "object", "properties": {"requests": {"type": "array"}}, "required": []},
+          "mock_response": {"responses": []}
+        }
+      }
+    },
+
+    "sap-s4-business-role-changes": {
+      "mcp_server_name": "sap.mcp/cds_aps_iam_api_brole_cdoc",
+      "description": "SAP S/4HANA Business Role Changes — audit trail of role modifications",
+      "tools": {
+        "list_businessrolechanges_for_cds_aps_iam_api_brole_cdoc": {
+          "description": "List all business role change documents (audit trail).",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$top": {"type": "string"},
+              "$filter": {"type": "string"},
+              "$orderby": {"type": "string"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "value": [
+              {"ChangeDocumentKey": "CHG-001", "BusinessRole": "BR_ADMIN",                 "ChangedBy": "USR014", "ChangeDate": "/Date(1745280000000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR014"},
+              {"ChangeDocumentKey": "CHG-002", "BusinessRole": "BR_PURCHASE_ORDER_CREATE",  "ChangedBy": "USR029", "ChangeDate": "/Date(1745193600000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR006"},
+              {"ChangeDocumentKey": "CHG-003", "BusinessRole": "BR_PURCHASE_ORDER_APPROVE", "ChangedBy": "USR029", "ChangeDate": "/Date(1745193600000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR006"},
+              {"ChangeDocumentKey": "CHG-004", "BusinessRole": "BR_SECURITY_ADMIN",         "ChangedBy": "USR025", "ChangeDate": "/Date(1745107200000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR025"},
+              {"ChangeDocumentKey": "CHG-005", "BusinessRole": "BR_CLIENT_ADMIN",           "ChangedBy": "USR014", "ChangeDate": "/Date(1745020800000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR017"},
+              {"ChangeDocumentKey": "CHG-006", "BusinessRole": "BR_ABAP_DEVELOPER",         "ChangedBy": "USR029", "ChangeDate": "/Date(1744934400000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR008"},
+              {"ChangeDocumentKey": "CHG-007", "BusinessRole": "BR_ABAP_DEVELOPER",         "ChangedBy": "USR029", "ChangeDate": "/Date(1744848000000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR009"},
+              {"ChangeDocumentKey": "CHG-008", "BusinessRole": "BR_USER_ADMIN",             "ChangedBy": "USR025", "ChangeDate": "/Date(1744761600000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR026"},
+              {"ChangeDocumentKey": "CHG-009", "BusinessRole": "BR_AUDIT_LOG_VIEWER",       "ChangedBy": "USR025", "ChangeDate": "/Date(1744675200000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR028"},
+              {"ChangeDocumentKey": "CHG-010", "BusinessRole": "BR_AUDIT_LOG_VIEWER",       "ChangedBy": "USR025", "ChangeDate": "/Date(1744588800000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR030"},
+              {"ChangeDocumentKey": "CHG-011", "BusinessRole": "BR_ROLE_ADMIN",             "ChangedBy": "USR025", "ChangeDate": "/Date(1744502400000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR029"},
+              {"ChangeDocumentKey": "CHG-012", "BusinessRole": "BR_VENDOR_MASTER_ADMIN",    "ChangedBy": "USR029", "ChangeDate": "/Date(1744416000000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR031"},
+              {"ChangeDocumentKey": "CHG-013", "BusinessRole": "BR_PAYMENT_PROCESS_EXECUTE","ChangedBy": "USR029", "ChangeDate": "/Date(1744416000000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR031"},
+              {"ChangeDocumentKey": "CHG-014", "BusinessRole": "BR_FI_POST_EXECUTE",        "ChangedBy": "USR025", "ChangeDate": "/Date(1744329600000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR007"},
+              {"ChangeDocumentKey": "CHG-015", "BusinessRole": "BR_PERIOD_CLOSE_ADMIN",     "ChangedBy": "USR025", "ChangeDate": "/Date(1744243200000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR007"},
+              {"ChangeDocumentKey": "CHG-016", "BusinessRole": "BR_BASIS_OPS",              "ChangedBy": "USR014", "ChangeDate": "/Date(1744156800000)/", "ChangeType": "D", "FieldChanged": "UserAssignment",   "OldValue": "USR999", "NewValue": ""},
+              {"ChangeDocumentKey": "CHG-017", "BusinessRole": "BR_IAM_GOVERNANCE_USER",    "ChangedBy": "USR025", "ChangeDate": "/Date(1744070400000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR026"},
+              {"ChangeDocumentKey": "CHG-018", "BusinessRole": "BR_HELPDESK_AGENT",         "ChangedBy": "USR029", "ChangeDate": "/Date(1743984000000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR019"},
+              {"ChangeDocumentKey": "CHG-019", "BusinessRole": "BR_BTP_DEVELOPER",          "ChangedBy": "USR014", "ChangeDate": "/Date(1743897600000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR012"},
+              {"ChangeDocumentKey": "CHG-020", "BusinessRole": "BR_MIDDLEWARE_DEVELOPER",   "ChangedBy": "USR014", "ChangeDate": "/Date(1743811200000)/", "ChangeType": "I", "FieldChanged": "UserAssignment",   "OldValue": "",       "NewValue": "USR011"}
+            ]
+          }
+        },
+        "get_businessrolechanges_for_cds_aps_iam_api_brole_cdoc": {
+          "description": "Get a specific business role change document.",
+          "input_schema": {
+            "type": "object",
+            "properties": {"ChangeDocumentKey": {"type": "string"}},
+            "required": ["ChangeDocumentKey"]
+          },
+          "mock_response": {
+            "ChangeDocumentKey": "CHG-001",
+            "BusinessRole": "BR_ADMIN",
+            "ChangedBy": "USR014",
+            "ChangeDate": "/Date(1745280000000)/",
+            "ChangeType": "I",
+            "FieldChanged": "UserAssignment",
+            "OldValue": "",
+            "NewValue": "USR014"
+          }
+        },
+        "count_businessrolechanges_for_cds_aps_iam_api_brole_cdoc": {
+          "description": "Count business role change documents.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": 20
+        },
+        "get_metadata_cds_aps_iam_api_brole_cdoc": {
+          "description": "Retrieve OData metadata for schema discovery.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"edmx": "<?xml version=\"1.0\"?><edmx:Edmx Version=\"4.0\"/>"}
+        },
+        "batch_for_cds_aps_iam_api_brole_cdoc": {
+          "description": "Execute OData $batch requests.",
+          "input_schema": {"type": "object", "properties": {"requests": {"type": "array"}}, "required": []},
+          "mock_response": {"responses": []}
+        }
+      }
+    },
+
+    "sap-s4-scim": {
+      "mcp_server_name": "sap.mcp/CE_APS_IAM_API_SCIM",
+      "description": "SAP S/4HANA SCIM User Management — user identities and group/role assignments",
+      "tools": {
+        "getAllUsersUsingGET": {
+          "description": "Retrieve all users from S/4HANA via SCIM.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "count": {"type": "integer"},
+              "startIndex": {"type": "integer"},
+              "filter": {"type": "string"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "totalResults": 32,
+            "startIndex": 1,
+            "itemsPerPage": 100,
+            "Resources": [
+              {"id":"USR001","userName":"carol.employee@corp.com",  "displayName":"Carol Employee",    "active":true, "department":"Supply Chain",  "title":"Procurement Specialist",
+               "groups":[{"value":"BR_EMPLOYEE_SELF_SERVICE","display":"BR_EMPLOYEE_SELF_SERVICE"},{"value":"BR_MM_PURCHASING_USER","display":"BR_MM_PURCHASING_USER"}]},
+              {"id":"USR002","userName":"dave.manager@corp.com",    "displayName":"Dave Manager",      "active":true, "department":"Finance",       "title":"Finance Manager",
+               "groups":[{"value":"BR_EMPLOYEE_SELF_SERVICE","display":"BR_EMPLOYEE_SELF_SERVICE"},{"value":"BR_MANAGER_APPROVE","display":"BR_MANAGER_APPROVE"},{"value":"BR_CO_COST_CENTER_MANAGER","display":"BR_CO_COST_CENTER_MANAGER"}]},
+              {"id":"USR003","userName":"eve.hr@corp.com",          "displayName":"Eve HR Specialist", "active":true, "department":"HR",            "title":"HR Payroll Specialist",
+               "groups":[{"value":"BR_HR_PAYROLL_USER","display":"BR_HR_PAYROLL_USER"},{"value":"BR_EMPLOYEE_SELF_SERVICE","display":"BR_EMPLOYEE_SELF_SERVICE"}]},
+              {"id":"USR004","userName":"frank.sales@corp.com",     "displayName":"Frank Sales Rep",   "active":true, "department":"Sales",         "title":"Sales Representative",
+               "groups":[{"value":"BR_SD_SALES_ORDER_PROCESS","display":"BR_SD_SALES_ORDER_PROCESS"}]},
+              {"id":"USR005","userName":"grace.finance@corp.com",   "displayName":"Grace Finance",     "active":true, "department":"Finance",       "title":"Financial Analyst",
+               "groups":[{"value":"BR_FI_ACCOUNTING_USER","display":"BR_FI_ACCOUNTING_USER"},{"value":"BR_CO_COST_CENTER_MANAGER","display":"BR_CO_COST_CENTER_MANAGER"}]},
+              {"id":"USR006","userName":"henry.proc@corp.com",      "displayName":"Henry Procurement", "active":true, "department":"Procurement",   "title":"Senior Buyer",
+               "groups":[{"value":"BR_PURCHASE_ORDER_CREATE","display":"BR_PURCHASE_ORDER_CREATE"},{"value":"BR_PURCHASE_ORDER_APPROVE","display":"BR_PURCHASE_ORDER_APPROVE"},{"value":"BR_MM_PURCHASING_USER","display":"BR_MM_PURCHASING_USER"}]},
+              {"id":"USR007","userName":"iris.finance2@corp.com",   "displayName":"Iris Finance Ctrl", "active":true, "department":"Finance",       "title":"Finance Controller",
+               "groups":[{"value":"BR_FI_POST_EXECUTE","display":"BR_FI_POST_EXECUTE"},{"value":"BR_PERIOD_CLOSE_ADMIN","display":"BR_PERIOD_CLOSE_ADMIN"},{"value":"BR_FI_ACCOUNTING_USER","display":"BR_FI_ACCOUNTING_USER"}]},
+              {"id":"USR008","userName":"alice.dev@corp.com",       "displayName":"Alice ABAP Dev",    "active":true, "department":"IT",            "title":"ABAP Developer",
+               "groups":[{"value":"BR_ABAP_DEVELOPER","display":"BR_ABAP_DEVELOPER"},{"value":"BR_ABAP_WORKBENCH","display":"BR_ABAP_WORKBENCH"}]},
+              {"id":"USR009","userName":"bob.dev@corp.com",         "displayName":"Bob Fiori Dev",     "active":true, "department":"IT",            "title":"Fiori Developer",
+               "groups":[{"value":"BR_ABAP_DEVELOPER","display":"BR_ABAP_DEVELOPER"},{"value":"BR_FIORI_DEVELOPER","display":"BR_FIORI_DEVELOPER"}]},
+              {"id":"USR010","userName":"carol.btp@corp.com",       "displayName":"Carol BTP Dev",     "active":true, "department":"IT",            "title":"BTP Developer",
+               "groups":[{"value":"BR_BTP_DEVELOPER","display":"BR_BTP_DEVELOPER"},{"value":"BR_API_INTEGRATION","display":"BR_API_INTEGRATION"}]},
+              {"id":"USR011","userName":"dave.int@corp.com",        "displayName":"Dave Integration",  "active":true, "department":"IT",            "title":"Integration Specialist",
+               "groups":[{"value":"BR_MIDDLEWARE_DEVELOPER","display":"BR_MIDDLEWARE_DEVELOPER"},{"value":"BR_API_INTEGRATION","display":"BR_API_INTEGRATION"}]},
+              {"id":"USR012","userName":"eve.ext@corp.com",         "displayName":"Eve Extension Dev", "active":true, "department":"IT",            "title":"Extension Developer",
+               "groups":[{"value":"BR_EXTENSION_DEVELOPER","display":"BR_EXTENSION_DEVELOPER"},{"value":"BR_BTP_DEVELOPER","display":"BR_BTP_DEVELOPER"}]},
+              {"id":"USR013","userName":"frank.techdev@corp.com",   "displayName":"Frank Tech Dev",    "active":true, "department":"IT",            "title":"Senior Developer",
+               "groups":[{"value":"BR_ABAP_DEVELOPER","display":"BR_ABAP_DEVELOPER"},{"value":"BR_ABAP_WORKBENCH","display":"BR_ABAP_WORKBENCH"},{"value":"BR_FIORI_DEVELOPER","display":"BR_FIORI_DEVELOPER"}]},
+              {"id":"USR014","userName":"john.basis@corp.com",      "displayName":"John Basis Admin",  "active":true, "department":"IT Ops",        "title":"SAP Basis Administrator",
+               "groups":[{"value":"BR_ADMIN","display":"BR_ADMIN"},{"value":"BR_BASIS_OPS","display":"BR_BASIS_OPS"},{"value":"BR_TRANSPORT_MANAGER","display":"BR_TRANSPORT_MANAGER"}]},
+              {"id":"USR015","userName":"kate.sysadmin@corp.com",   "displayName":"Kate SysAdmin",     "active":true, "department":"IT Ops",        "title":"System Administrator",
+               "groups":[{"value":"BR_SYSADMIN_SUPPORT","display":"BR_SYSADMIN_SUPPORT"},{"value":"BR_RFC_DESTINATION_ADMIN","display":"BR_RFC_DESTINATION_ADMIN"},{"value":"BR_BATCH_ADMIN","display":"BR_BATCH_ADMIN"}]},
+              {"id":"USR016","userName":"leo.transport@corp.com",   "displayName":"Leo Transport Mgr", "active":true, "department":"IT Ops",        "title":"Transport Manager",
+               "groups":[{"value":"BR_TRANSPORT_MANAGER","display":"BR_TRANSPORT_MANAGER"},{"value":"BR_BASIS_OPS","display":"BR_BASIS_OPS"}]},
+              {"id":"USR017","userName":"mia.client@corp.com",      "displayName":"Mia Client Admin",  "active":true, "department":"IT Ops",        "title":"SAP Client Administrator",
+               "groups":[{"value":"BR_CLIENT_ADMIN","display":"BR_CLIENT_ADMIN"},{"value":"BR_SYSADMIN_SUPPORT","display":"BR_SYSADMIN_SUPPORT"}]},
+              {"id":"USR018","userName":"nora.batch@corp.com",      "displayName":"Nora Batch Admin",  "active":true, "department":"IT Ops",        "title":"Batch Administrator",
+               "groups":[{"value":"BR_BATCH_ADMIN","display":"BR_BATCH_ADMIN"},{"value":"BR_BASIS_OPS","display":"BR_BASIS_OPS"}]},
+              {"id":"USR019","userName":"oscar.basis@corp.com",     "displayName":"Oscar Basis Ops",   "active":true, "department":"IT Ops",        "title":"Basis Operations Specialist",
+               "groups":[{"value":"BR_BASIS_OPS","display":"BR_BASIS_OPS"},{"value":"BR_RFC_DESTINATION_ADMIN","display":"BR_RFC_DESTINATION_ADMIN"},{"value":"BR_ABAP_DEVELOPER","display":"BR_ABAP_DEVELOPER"},{"value":"BR_HELPDESK_AGENT","display":"BR_HELPDESK_AGENT"},{"value":"BR_FI_ACCOUNTING_USER","display":"BR_FI_ACCOUNTING_USER"},{"value":"BR_EMPLOYEE_SELF_SERVICE","display":"BR_EMPLOYEE_SELF_SERVICE"}]},
+              {"id":"USR020","userName":"emma.l1@corp.com",         "displayName":"Emma L1 Support",   "active":true, "department":"IT Support",    "title":"L1 Helpdesk Agent",
+               "groups":[{"value":"BR_HELPDESK_AGENT","display":"BR_HELPDESK_AGENT"},{"value":"BR_INCIDENT_MANAGER","display":"BR_INCIDENT_MANAGER"}]},
+              {"id":"USR021","userName":"frank.l2@corp.com",        "displayName":"Frank L2 Support",  "active":true, "department":"IT Support",    "title":"L2 Support Specialist",
+               "groups":[{"value":"BR_SUPPORT_L2_SPECIALIST","display":"BR_SUPPORT_L2_SPECIALIST"},{"value":"BR_HELPDESK_AGENT","display":"BR_HELPDESK_AGENT"}]},
+              {"id":"USR022","userName":"grace.l3@corp.com",        "displayName":"Grace L3 Expert",   "active":true, "department":"IT Support",    "title":"L3 Support Expert",
+               "groups":[{"value":"BR_SUPPORT_L3_EXPERT","display":"BR_SUPPORT_L3_EXPERT"},{"value":"BR_MONITORING_OPS","display":"BR_MONITORING_OPS"}]},
+              {"id":"USR023","userName":"harry.ops@corp.com",       "displayName":"Harry Ops Mgr",     "active":true, "department":"IT Operations", "title":"Operations Manager",
+               "groups":[{"value":"BR_MONITORING_OPS","display":"BR_MONITORING_OPS"},{"value":"BR_INCIDENT_MANAGER","display":"BR_INCIDENT_MANAGER"}]},
+              {"id":"USR024","userName":"iris.desk@corp.com",       "displayName":"Iris Service Desk", "active":true, "department":"IT Support",    "title":"Service Desk Agent",
+               "groups":[{"value":"BR_SERVICE_DESK_AGENT","display":"BR_SERVICE_DESK_AGENT"},{"value":"BR_HELPDESK_AGENT","display":"BR_HELPDESK_AGENT"}]},
+              {"id":"USR025","userName":"jack.secadmin@corp.com",   "displayName":"Jack Sec Admin",    "active":true, "department":"Security",      "title":"Security Administrator",
+               "groups":[{"value":"BR_SECURITY_ADMIN","display":"BR_SECURITY_ADMIN"},{"value":"BR_AUTH_ADMIN","display":"BR_AUTH_ADMIN"}]},
+              {"id":"USR026","userName":"kate.iam@corp.com",        "displayName":"Kate IAM Manager",  "active":true, "department":"Security",      "title":"IAM Manager",
+               "groups":[{"value":"BR_IAM_GOVERNANCE_USER","display":"BR_IAM_GOVERNANCE_USER"},{"value":"BR_USER_ADMIN","display":"BR_USER_ADMIN"}]},
+              {"id":"USR027","userName":"leo.grc@corp.com",         "displayName":"Leo GRC Analyst",   "active":true, "department":"GRC",           "title":"GRC Analyst",
+               "groups":[{"value":"BR_GRC_ACCESS_CONTROL","display":"BR_GRC_ACCESS_CONTROL"},{"value":"BR_COMPLIANCE_OFFICER","display":"BR_COMPLIANCE_OFFICER"}]},
+              {"id":"USR028","userName":"mia.audit@corp.com",       "displayName":"Mia Auditor",       "active":true, "department":"Audit",         "title":"Internal Auditor",
+               "groups":[{"value":"BR_AUDIT_LOG_VIEWER","display":"BR_AUDIT_LOG_VIEWER"},{"value":"BR_COMPLIANCE_REVIEWER","display":"BR_COMPLIANCE_REVIEWER"}]},
+              {"id":"USR029","userName":"nora.rolesec@corp.com",    "displayName":"Nora Role Admin",   "active":true, "department":"Security",      "title":"Role Administrator",
+               "groups":[{"value":"BR_ROLE_ADMIN","display":"BR_ROLE_ADMIN"},{"value":"BR_SECURITY_AUDITOR","display":"BR_SECURITY_AUDITOR"},{"value":"BR_BUSINESS_ROLE_ASSIGN","display":"BR_BUSINESS_ROLE_ASSIGN"}]},
+              {"id":"USR030","userName":"oscar.sec@corp.com",       "displayName":"Oscar Sec Analyst", "active":true, "department":"Security",      "title":"Security Analyst",
+               "groups":[{"value":"BR_USER_ADMIN","display":"BR_USER_ADMIN"},{"value":"BR_AUDIT_LOG_VIEWER","display":"BR_AUDIT_LOG_VIEWER"}]},
+              {"id":"USR031","userName":"peter.vendor@corp.com",    "displayName":"Peter Vendor Mgr",  "active":true, "department":"Finance",       "title":"Vendor Manager",
+               "groups":[{"value":"BR_VENDOR_MASTER_ADMIN","display":"BR_VENDOR_MASTER_ADMIN"},{"value":"BR_PAYMENT_PROCESS_EXECUTE","display":"BR_PAYMENT_PROCESS_EXECUTE"}]},
+              {"id":"USR032","userName":"quinn.finance@corp.com",   "displayName":"Quinn Finance Mgr", "active":true, "department":"Finance",       "title":"Finance Manager",
+               "groups":[{"value":"BR_FI_ACCOUNTING_USER","display":"BR_FI_ACCOUNTING_USER"},{"value":"BR_MM_PURCHASING_USER","display":"BR_MM_PURCHASING_USER"},{"value":"BR_MANAGER_APPROVE","display":"BR_MANAGER_APPROVE"}]}
+            ]
+          }
+        },
+        "getUserUsingGET": {
+          "description": "Get a single user by SCIM ID.",
+          "input_schema": {
+            "type": "object",
+            "properties": {"id": {"type": "string"}},
+            "required": ["id"]
+          },
+          "mock_response": {
+            "id": "USR014",
+            "userName": "john.basis@corp.com",
+            "displayName": "John Basis Admin",
+            "active": true,
+            "department": "IT Ops",
+            "title": "SAP Basis Administrator",
+            "groups": [
+              {"value": "BR_ADMIN", "display": "BR_ADMIN"},
+              {"value": "BR_BASIS_OPS", "display": "BR_BASIS_OPS"},
+              {"value": "BR_TRANSPORT_MANAGER", "display": "BR_TRANSPORT_MANAGER"}
+            ]
+          }
+        },
+        "getAllGroupsUsingGET": {
+          "description": "Retrieve all groups (roles) via SCIM.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "count": {"type": "integer"},
+              "startIndex": {"type": "integer"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "totalResults": 44,
+            "Resources": [
+              {"id":"BR_EMPLOYEE_SELF_SERVICE",  "displayName":"Employee Self-Service",        "members":[{"value":"USR001"},{"value":"USR002"},{"value":"USR003"},{"value":"USR019"}]},
+              {"id":"BR_MANAGER_APPROVE",        "displayName":"Manager Approval Rights",       "members":[{"value":"USR002"},{"value":"USR032"}]},
+              {"id":"BR_MM_PURCHASING_USER",     "displayName":"MM Purchasing User",             "members":[{"value":"USR001"},{"value":"USR006"},{"value":"USR032"}]},
+              {"id":"BR_FI_ACCOUNTING_USER",     "displayName":"Financial Accounting User",      "members":[{"value":"USR005"},{"value":"USR007"},{"value":"USR019"},{"value":"USR032"}]},
+              {"id":"BR_CO_COST_CENTER_MANAGER", "displayName":"Cost Center Manager",            "members":[{"value":"USR002"},{"value":"USR005"}]},
+              {"id":"BR_HR_PAYROLL_USER",        "displayName":"HR Payroll User",                "members":[{"value":"USR003"}]},
+              {"id":"BR_SD_SALES_ORDER_PROCESS", "displayName":"Sales Order Processing",         "members":[{"value":"USR004"}]},
+              {"id":"BR_PURCHASE_ORDER_CREATE",  "displayName":"Purchase Order Creator",         "members":[{"value":"USR006"}]},
+              {"id":"BR_PURCHASE_ORDER_APPROVE", "displayName":"Purchase Order Approver",        "members":[{"value":"USR006"}]},
+              {"id":"BR_VENDOR_MASTER_ADMIN",    "displayName":"Vendor Master Administrator",    "members":[{"value":"USR031"}]},
+              {"id":"BR_PAYMENT_PROCESS_EXECUTE","displayName":"Payment Processing Executor",    "members":[{"value":"USR031"}]},
+              {"id":"BR_FI_POST_EXECUTE",        "displayName":"Financial Posting Executor",     "members":[{"value":"USR007"}]},
+              {"id":"BR_PERIOD_CLOSE_ADMIN",     "displayName":"Period Closing Administrator",   "members":[{"value":"USR007"}]},
+              {"id":"BR_ABAP_DEVELOPER",         "displayName":"ABAP Developer",                 "members":[{"value":"USR008"},{"value":"USR009"},{"value":"USR013"},{"value":"USR019"}]},
+              {"id":"BR_ABAP_WORKBENCH",         "displayName":"ABAP Workbench Access",           "members":[{"value":"USR008"},{"value":"USR013"}]},
+              {"id":"BR_FIORI_DEVELOPER",        "displayName":"SAP Fiori Developer",             "members":[{"value":"USR009"},{"value":"USR013"}]},
+              {"id":"BR_BTP_DEVELOPER",          "displayName":"SAP BTP Developer",               "members":[{"value":"USR010"},{"value":"USR012"}]},
+              {"id":"BR_API_INTEGRATION",        "displayName":"API Integration Specialist",      "members":[{"value":"USR010"},{"value":"USR011"}]},
+              {"id":"BR_MIDDLEWARE_DEVELOPER",   "displayName":"Middleware Developer",             "members":[{"value":"USR011"}]},
+              {"id":"BR_EXTENSION_DEVELOPER",    "displayName":"Extension Developer",              "members":[{"value":"USR012"}]},
+              {"id":"BR_ADMIN",                  "displayName":"System Administrator",             "members":[{"value":"USR014"}]},
+              {"id":"BR_BASIS_OPS",              "displayName":"SAP Basis Operations",             "members":[{"value":"USR014"},{"value":"USR016"},{"value":"USR018"},{"value":"USR019"}]},
+              {"id":"BR_TRANSPORT_MANAGER",      "displayName":"Transport Management",             "members":[{"value":"USR014"},{"value":"USR016"}]},
+              {"id":"BR_SYSADMIN_SUPPORT",       "displayName":"System Administration Support",   "members":[{"value":"USR015"},{"value":"USR017"}]},
+              {"id":"BR_RFC_DESTINATION_ADMIN",  "displayName":"RFC Destination Administrator",   "members":[{"value":"USR015"},{"value":"USR019"}]},
+              {"id":"BR_CLIENT_ADMIN",           "displayName":"SAP Client Administrator",         "members":[{"value":"USR017"}]},
+              {"id":"BR_BATCH_ADMIN",            "displayName":"Batch Job Administrator",          "members":[{"value":"USR015"},{"value":"USR018"}]},
+              {"id":"BR_HELPDESK_AGENT",         "displayName":"IT Helpdesk Agent",                "members":[{"value":"USR019"},{"value":"USR020"},{"value":"USR021"},{"value":"USR024"}]},
+              {"id":"BR_INCIDENT_MANAGER",       "displayName":"Incident Manager",                 "members":[{"value":"USR020"},{"value":"USR023"}]},
+              {"id":"BR_SUPPORT_L2_SPECIALIST",  "displayName":"L2 Support Specialist",            "members":[{"value":"USR021"}]},
+              {"id":"BR_SUPPORT_L3_EXPERT",      "displayName":"L3 Support Expert",                "members":[{"value":"USR022"}]},
+              {"id":"BR_MONITORING_OPS",         "displayName":"Operations Monitoring",            "members":[{"value":"USR022"},{"value":"USR023"}]},
+              {"id":"BR_SERVICE_DESK_AGENT",     "displayName":"Service Desk Agent",               "members":[{"value":"USR024"}]},
+              {"id":"BR_SECURITY_ADMIN",         "displayName":"Security Administrator",           "members":[{"value":"USR025"}]},
+              {"id":"BR_AUTH_ADMIN",             "displayName":"Authorization Administrator",      "members":[{"value":"USR025"}]},
+              {"id":"BR_IAM_GOVERNANCE_USER",    "displayName":"IAM Governance User",              "members":[{"value":"USR026"}]},
+              {"id":"BR_USER_ADMIN",             "displayName":"User Administrator",               "members":[{"value":"USR026"},{"value":"USR030"}]},
+              {"id":"BR_GRC_ACCESS_CONTROL",     "displayName":"GRC Access Control",               "members":[{"value":"USR027"}]},
+              {"id":"BR_COMPLIANCE_OFFICER",     "displayName":"Compliance Officer",               "members":[{"value":"USR027"}]},
+              {"id":"BR_AUDIT_LOG_VIEWER",       "displayName":"Audit Log Viewer",                 "members":[{"value":"USR028"},{"value":"USR030"}]},
+              {"id":"BR_SECURITY_AUDITOR",       "displayName":"Security Auditor",                 "members":[{"value":"USR029"}]},
+              {"id":"BR_ROLE_ADMIN",             "displayName":"Role Administrator",               "members":[{"value":"USR029"}]},
+              {"id":"BR_BUSINESS_ROLE_ASSIGN",   "displayName":"Business Role Assignment",         "members":[{"value":"USR029"}]},
+              {"id":"BR_COMPLIANCE_REVIEWER",    "displayName":"Compliance Reviewer",              "members":[{"value":"USR028"}]}
+            ]
+          }
+        },
+        "getGroupUsingGET": {
+          "description": "Get a specific SCIM group.",
+          "input_schema": {
+            "type": "object",
+            "properties": {"id": {"type": "string"}},
+            "required": ["id"]
+          },
+          "mock_response": {
+            "id": "BR_ADMIN",
+            "displayName": "System Administrator",
+            "members": [{"value": "USR014", "display": "John Basis Admin"}]
+          }
+        },
+        "getServiceProviderConfigurationUsingGET": {
+          "description": "Get SCIM service provider configuration.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"schemas": ["urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig"], "patch": {"supported": true}, "bulk": {"supported": false}}
+        },
+        "getAllSchemasUsingGET": {
+          "description": "Get all SCIM schemas.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"totalResults": 2, "Resources": [{"id": "urn:ietf:params:scim:schemas:core:2.0:User"}, {"id": "urn:ietf:params:scim:schemas:core:2.0:Group"}]}
+        },
+        "getSchemasUsingGET": {
+          "description": "Get a specific SCIM schema.",
+          "input_schema": {"type": "object", "properties": {"id": {"type": "string"}}, "required": ["id"]},
+          "mock_response": {"id": "urn:ietf:params:scim:schemas:core:2.0:User"}
+        },
+        "getAllResourceTypesUsingGET": {
+          "description": "Get all SCIM resource types.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"totalResults": 2, "Resources": [{"id": "User"}, {"id": "Group"}]}
+        },
+        "getResourceTypesUsingGET": {
+          "description": "Get a specific SCIM resource type.",
+          "input_schema": {"type": "object", "properties": {"id": {"type": "string"}}, "required": ["id"]},
+          "mock_response": {"id": "User", "schema": "urn:ietf:params:scim:schemas:core:2.0:User"}
+        }
+      }
+    }
+  },
+  "metadata": {
+    "version": "2.0.0",
+    "created_for_agent": "sap-role-optimization-agent",
+    "mock_mode": true,
+    "deterministic": true,
+    "total_servers": 3,
+    "total_tools": 32,
+    "generation_date": "2026-11-13",
+    "generated_from": [
+      "assets/sap-s4-business-role-mcp-server/mcp-translation/translation.json",
+      "assets/sap-s4-business-role-changes-mcp-server/mcp-translation/translation.json",
+      "assets/sap-s4-scim-mcp-server/mcp-translation/translation.json"
+    ],
+    "dataset_summary": {
+      "total_users": 32,
+      "total_roles": 44,
+      "total_role_user_pairs": 75,
+      "environments": ["S4_CLOUD", "S4_ON_PREM", "BTP", "MULTI_TENANT"],
+      "users_by_category": {
+        "Functional": ["USR001","USR002","USR003","USR004","USR005","USR006","USR007","USR031","USR032"],
+        "Technical": ["USR008","USR009","USR010","USR011","USR012","USR013"],
+        "Backend/Basis": ["USR014","USR015","USR016","USR017","USR018","USR019"],
+        "Support": ["USR020","USR021","USR022","USR023","USR024"],
+        "Security/Compliance": ["USR025","USR026","USR027","USR028","USR029","USR030"]
+      },
+      "sod_conflicts": [
+        {"user":"USR006","rule":"SOD-001","severity":"High",  "roles":["BR_PURCHASE_ORDER_CREATE","BR_PURCHASE_ORDER_APPROVE"],"env":"S4_CLOUD"},
+        {"user":"USR007","rule":"SOD-005","severity":"Medium","roles":["BR_FI_POST_EXECUTE","BR_PERIOD_CLOSE_ADMIN"],          "env":"S4_ON_PREM"},
+        {"user":"USR029","rule":"SOD-004","severity":"Medium","roles":["BR_ROLE_ADMIN","BR_BUSINESS_ROLE_ASSIGN"],             "env":"S4_CLOUD"},
+        {"user":"USR030","rule":"SOD-003","severity":"High",  "roles":["BR_USER_ADMIN","BR_AUDIT_LOG_VIEWER"],                "env":"S4_CLOUD"},
+        {"user":"USR031","rule":"SOD-002","severity":"High",  "roles":["BR_VENDOR_MASTER_ADMIN","BR_PAYMENT_PROCESS_EXECUTE"],"env":"BTP"}
+      ],
+      "single_holder_critical_roles": [
+        {"role":"BR_ADMIN",             "holder":"USR014","env":"S4_ON_PREM","criticality":"High"},
+        {"role":"BR_CLIENT_ADMIN",      "holder":"USR017","env":"S4_ON_PREM","criticality":"High"},
+        {"role":"BR_SECURITY_ADMIN",    "holder":"USR025","env":"S4_ON_PREM","criticality":"High"},
+        {"role":"BR_AUTH_ADMIN",        "holder":"USR025","env":"S4_ON_PREM","criticality":"High"},
+        {"role":"BR_IAM_GOVERNANCE_USER","holder":"USR026","env":"S4_CLOUD","criticality":"High"}
+      ],
+      "over_privileged_users": [
+        {"user":"USR019","reason":"6 roles spanning Backend/Basis + Technical + Support + Functional categories"}
+      ],
+      "under_privileged_users": [
+        {"user":"USR004","reason":"Only 1 role (BR_SD_SALES_ORDER_PROCESS); missing standard functional roles"},
+        {"user":"USR024","reason":"Only helpdesk/service-desk roles; missing monitoring/L2 expected for Support category"}
+      ],
+      "audit_trail_changes": 20
+    }
+  }
+}

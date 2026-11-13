@@ -1,0 +1,66 @@
+[
+  {
+    "rule_id": "SOD-001",
+    "description": "Create and Approve Purchase Orders",
+    "role_a_pattern": "purchase_order_create",
+    "role_b_pattern": "purchase_order_approve",
+    "risk_level": "High",
+    "mitigation": "Assign approval role to a different user. Use workflow-based approval with mandatory dual control."
+  },
+  {
+    "rule_id": "SOD-002",
+    "description": "Vendor Master Maintenance and Payment Processing",
+    "role_a_pattern": "vendor_master",
+    "role_b_pattern": "payment_process",
+    "risk_level": "High",
+    "mitigation": "Separate vendor management from payment execution. Consider a dedicated AP team structure."
+  },
+  {
+    "rule_id": "SOD-003",
+    "description": "User Administration and Audit Log Access",
+    "role_a_pattern": "user_admin",
+    "role_b_pattern": "audit_log",
+    "risk_level": "High",
+    "mitigation": "Restrict audit log access to a separate security/compliance role not held by system administrators."
+  },
+  {
+    "rule_id": "SOD-004",
+    "description": "Role Administration and Business Role Assignment",
+    "role_a_pattern": "role_admin",
+    "role_b_pattern": "business_role_assign",
+    "risk_level": "Medium",
+    "mitigation": "Ensure role administrators cannot assign roles to themselves. Enable self-assignment prevention in IAM settings."
+  },
+  {
+    "rule_id": "SOD-005",
+    "description": "Financial Posting and Period Closing",
+    "role_a_pattern": "fi_post",
+    "role_b_pattern": "period_close",
+    "risk_level": "Medium",
+    "mitigation": "Period closing should be performed by a finance controller, not the posting user."
+  },
+  {
+    "rule_id": "SOD-006",
+    "description": "Goods Receipt and Invoice Verification",
+    "role_a_pattern": "goods_receipt",
+    "role_b_pattern": "invoice_verify",
+    "risk_level": "High",
+    "mitigation": "Separate receiving from invoice verification to prevent fictitious goods receipt fraud."
+  },
+  {
+    "rule_id": "SOD-007",
+    "description": "System Configuration and Transport Release",
+    "role_a_pattern": "system_config",
+    "role_b_pattern": "transport_release",
+    "risk_level": "Medium",
+    "mitigation": "Transport release should require a second approver independent of the configuration author."
+  },
+  {
+    "rule_id": "SOD-008",
+    "description": "Bank Master Data and Payment Execution",
+    "role_a_pattern": "bank_master",
+    "role_b_pattern": "payment_execute",
+    "risk_level": "High",
+    "mitigation": "Bank data changes and payment execution must be held by different users at all times."
+  }
+]

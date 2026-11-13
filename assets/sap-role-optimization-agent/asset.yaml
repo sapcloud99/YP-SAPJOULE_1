@@ -1,0 +1,51 @@
+apiVersion: asset.sap/v1
+kind: Asset
+type: agent
+
+metadata:
+  name: sap-role-optimization-agent
+  description: >
+    AI agent that analyzes SAP user roles across BTP, On-Premise, Cloud, and
+    multi-tenant environments. Detects SoD conflicts, identifies single-holder
+    critical roles, recommends backup users, and optimizes role assignments by
+    functional category.
+
+provides:
+  apis:
+    - name: sap-role-optimization-agent
+      kind: a2a
+      ordId: customer.build:apiResource:sap-role-optimization-6f66f.sap-role-optimization-agent:v1
+
+container:
+  buildPath: .
+  port: 5000
+
+requires:
+  - name: sap-s4-business-role-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:sap-role-optimization-6f66f.sap-s4-business-role-mcp-server:v1
+  - name: sap-s4-business-role-changes-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:sap-role-optimization-6f66f.sap-s4-business-role-changes-mcp-server:v1
+  - name: sap-s4-scim-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:sap-role-optimization-6f66f.sap-s4-scim-mcp-server:v1
+
+probes:
+  startup:
+    path: /.well-known/agent.json
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 18
+  liveness:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 15
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 3
+  readiness:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 5
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 3

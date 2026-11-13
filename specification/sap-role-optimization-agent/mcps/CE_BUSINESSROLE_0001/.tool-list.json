@@ -1,0 +1,4365 @@
+[
+  {
+    "name": "get_metadata_sap_self",
+    "title": "get_metadata_sap_self",
+    "description": "Get metadata of the OData service with optional filtering to reduce token consumption.\nReturns the metadata in XML format, which can be used to discover available entities and their properties.\nCall this endpoint every time before you call other tools to ensure understanding of the schema.\nBased on the metadata, you can dynamically create an OData request.\n\nUse filtering parameters to get specific metadata sections. Without parameters, this tool returns the complete XML metadata (which might be huge).\nOnly use the specified enum values for the filtering parameters.\n",
+    "odataType": {
+      "metadataRequest": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "batch_for_sap_self",
+    "title": "batch_for_sap_self",
+    "description": "Execute multiple OData operations in a single batch request using the $batch endpoint. This allows you to combine multiple tool calls into one HTTP request, improving efficiency when performing multiple operations.",
+    "odataType": {
+      "batchRequest": {},
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "list_businessrolebusinesscatalogs_for_sap_self",
+    "title": "list_BusinessRoleBusinessCatalogs_for_sap_self",
+    "description": "Retrieve a list of entities from the BusinessRoleBusinessCatalogs collection in the sap_self service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleBusinessCatalogs",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "count"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "get_businessrolebusinesscatalogs_for_sap_self",
+    "title": "get_BusinessRoleBusinessCatalogs_for_sap_self",
+    "description": "Retrieve a single entity by its key from the BusinessRoleBusinessCatalogs collection in the sap_self service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleBusinessCatalogs",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "BusinessCatalogID",
+            "newParameterName": "businesscatalogid"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_businessrolebusinesscatalogs_for_sap_self",
+    "title": "count_BusinessRoleBusinessCatalogs_for_sap_self",
+    "description": "Get the total count of entities in the BusinessRoleBusinessCatalogs collection in the sap_self service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleBusinessCatalogs",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_businessrolebusinessusers_for_sap_self",
+    "title": "list_BusinessRoleBusinessUsers_for_sap_self",
+    "description": "Retrieve a list of entities from the BusinessRoleBusinessUsers collection in the sap_self service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleBusinessUsers",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "count"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "get_businessrolebusinessusers_for_sap_self",
+    "title": "get_BusinessRoleBusinessUsers_for_sap_self",
+    "description": "Retrieve a single entity by its key from the BusinessRoleBusinessUsers collection in the sap_self service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleBusinessUsers",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "UserID",
+            "newParameterName": "userid"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_businessrolebusinessusers_for_sap_self",
+    "title": "count_BusinessRoleBusinessUsers_for_sap_self",
+    "description": "Get the total count of entities in the BusinessRoleBusinessUsers collection in the sap_self service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleBusinessUsers",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_businessrolederivedroles_for_sap_self",
+    "title": "list_BusinessRoleDerivedRoles_for_sap_self",
+    "description": "Retrieve a list of entities from the BusinessRoleDerivedRoles collection in the sap_self service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleDerivedRoles",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "count"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "get_businessrolederivedroles_for_sap_self",
+    "title": "get_BusinessRoleDerivedRoles_for_sap_self",
+    "description": "Retrieve a single entity by its key from the BusinessRoleDerivedRoles collection in the sap_self service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleDerivedRoles",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "DerivedBusinessRoleID",
+            "newParameterName": "derivedbusinessroleid"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_businessrolederivedroles_for_sap_self",
+    "title": "count_BusinessRoleDerivedRoles_for_sap_self",
+    "description": "Get the total count of entities in the BusinessRoleDerivedRoles collection in the sap_self service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleDerivedRoles",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_businessroleiamapps_for_sap_self",
+    "title": "list_BusinessRoleIAMApps_for_sap_self",
+    "description": "Retrieve a list of entities from the BusinessRoleIAMApps collection in the sap_self service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleIAMApps",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "count"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "get_businessroleiamapps_for_sap_self",
+    "title": "get_BusinessRoleIAMApps_for_sap_self",
+    "description": "Retrieve a single entity by its key from the BusinessRoleIAMApps collection in the sap_self service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleIAMApps",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "AppID",
+            "newParameterName": "appid"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_businessroleiamapps_for_sap_self",
+    "title": "count_BusinessRoleIAMApps_for_sap_self",
+    "description": "Get the total count of entities in the BusinessRoleIAMApps collection in the sap_self service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleIAMApps",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_businessrolelaunchpadspaces_for_sap_self",
+    "title": "list_BusinessRoleLaunchpadSpaces_for_sap_self",
+    "description": "Retrieve a list of entities from the BusinessRoleLaunchpadSpaces collection in the sap_self service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleLaunchpadSpaces",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "count"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "get_businessrolelaunchpadspaces_for_sap_self",
+    "title": "get_BusinessRoleLaunchpadSpaces_for_sap_self",
+    "description": "Retrieve a single entity by its key from the BusinessRoleLaunchpadSpaces collection in the sap_self service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleLaunchpadSpaces",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "SpaceID",
+            "newParameterName": "spaceid"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_businessrolelaunchpadspaces_for_sap_self",
+    "title": "count_BusinessRoleLaunchpadSpaces_for_sap_self",
+    "description": "Get the total count of entities in the BusinessRoleLaunchpadSpaces collection in the sap_self service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleLaunchpadSpaces",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_businessrolerestrictionfields_for_sap_self",
+    "title": "list_BusinessRoleRestrictionFields_for_sap_self",
+    "description": "Retrieve a list of entities from the BusinessRoleRestrictionFields collection in the sap_self service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictionFields",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "count"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "get_businessrolerestrictionfields_for_sap_self",
+    "title": "get_BusinessRoleRestrictionFields_for_sap_self",
+    "description": "Retrieve a single entity by its key from the BusinessRoleRestrictionFields collection in the sap_self service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictionFields",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "RestrictionTypeAssignmentUUID",
+            "newParameterName": "restrictiontypeassignmentuuid"
+          },
+          {
+            "name": "FieldName",
+            "newParameterName": "fieldname"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_businessrolerestrictionfields_for_sap_self",
+    "title": "count_BusinessRoleRestrictionFields_for_sap_self",
+    "description": "Get the total count of entities in the BusinessRoleRestrictionFields collection in the sap_self service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictionFields",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_businessrolerestrictions_for_sap_self",
+    "title": "list_BusinessRoleRestrictions_for_sap_self",
+    "description": "Retrieve a list of entities from the BusinessRoleRestrictions collection in the sap_self service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictions",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "count"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "get_businessrolerestrictions_for_sap_self",
+    "title": "get_BusinessRoleRestrictions_for_sap_self",
+    "description": "Retrieve a single entity by its key from the BusinessRoleRestrictions collection in the sap_self service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictions",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "RestrictionTypeAssignmentUUID",
+            "newParameterName": "restrictiontypeassignmentuuid"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_businessrolerestrictions_for_sap_self",
+    "title": "count_BusinessRoleRestrictions_for_sap_self",
+    "description": "Get the total count of entities in the BusinessRoleRestrictions collection in the sap_self service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictions",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_businessrolerestrictionvalues_for_sap_self",
+    "title": "list_BusinessRoleRestrictionValues_for_sap_self",
+    "description": "Retrieve a list of entities from the BusinessRoleRestrictionValues collection in the sap_self service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictionValues",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "count"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "get_businessrolerestrictionvalues_for_sap_self",
+    "title": "get_BusinessRoleRestrictionValues_for_sap_self",
+    "description": "Retrieve a single entity by its key from the BusinessRoleRestrictionValues collection in the sap_self service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictionValues",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "RestrictionTypeAssignmentUUID",
+            "newParameterName": "restrictiontypeassignmentuuid"
+          },
+          {
+            "name": "FieldName",
+            "newParameterName": "fieldname"
+          },
+          {
+            "name": "RestrictionValueAssignmentUUID",
+            "newParameterName": "restrictionvalueassignmentuuid"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_businessrolerestrictionvalues_for_sap_self",
+    "title": "count_BusinessRoleRestrictionValues_for_sap_self",
+    "description": "Get the total count of entities in the BusinessRoleRestrictionValues collection in the sap_self service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictionValues",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_businessroles_for_sap_self",
+    "title": "list_BusinessRoles_for_sap_self",
+    "description": "Retrieve a list of entities from the BusinessRoles collection in the sap_self service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "crudOperation": "read",
+        "parameters": [
+          {
+            "name": "filter"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "orderby"
+          },
+          {
+            "name": "top"
+          },
+          {
+            "name": "skip"
+          },
+          {
+            "name": "expand"
+          },
+          {
+            "name": "count"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "get_businessroles_for_sap_self",
+    "title": "get_BusinessRoles_for_sap_self",
+    "description": "Retrieve a single entity by its key from the BusinessRoles collection in the sap_self service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "crudOperation": "readByKey",
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "select"
+          },
+          {
+            "name": "expand"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "count_businessroles_for_sap_self",
+    "title": "count_BusinessRoles_for_sap_self",
+    "description": "Get the total count of entities in the BusinessRoles collection in the sap_self service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "crudOperation": "count",
+        "parameters": [
+          {
+            "name": "filter"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_restrictionvalues_in_businessrolerestrictionfield",
+    "title": "list_RestrictionValues_in_BusinessRoleRestrictionFields_for_sap_self",
+    "description": "Navigate from BusinessRoleRestrictionFields to related BusinessRoleRestrictionValuesType entities via the 'RestrictionValues' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictionFields",
+        "navigationProperty": {
+          "name": "RestrictionValues",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "count"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "RestrictionTypeAssignmentUUID",
+            "newParameterName": "restrictiontypeassignmentuuid"
+          },
+          {
+            "name": "FieldName",
+            "newParameterName": "fieldname"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_restrictionvalues_in_businessrolerestrictionfield",
+    "title": "create_RestrictionValues_in_BusinessRoleRestrictionFields_for_sap_self",
+    "description": "Create a new BusinessRoleRestrictionValuesType entity via the 'RestrictionValues' navigation property of BusinessRoleRestrictionFields. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sap_self tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictionFields",
+        "navigationProperty": {
+          "name": "RestrictionValues",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "BusinessRoleID",
+              "newParameterName": "businessroleid_2"
+            },
+            {
+              "name": "RestrictionTypeAssignmentUUID",
+              "newParameterName": "restrictiontypeassignmentuuid_2"
+            },
+            {
+              "name": "FieldName",
+              "newParameterName": "fieldname_2"
+            },
+            {
+              "name": "RestrictionValueAssignmentUUID",
+              "newParameterName": "restrictionvalueassignmentuuid"
+            },
+            {
+              "name": "LowValue",
+              "newParameterName": "lowvalue"
+            },
+            {
+              "name": "HighValue",
+              "newParameterName": "highvalue"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "RestrictionTypeAssignmentUUID",
+            "newParameterName": "restrictiontypeassignmentuuid"
+          },
+          {
+            "name": "FieldName",
+            "newParameterName": "fieldname"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "odata-entityid"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count_restrictionvalues_in_businessrolerestrictionfield",
+    "title": "count_RestrictionValues_in_BusinessRoleRestrictionFields_for_sap_self",
+    "description": "Count BusinessRoleRestrictionValuesType entities accessible via the 'RestrictionValues' navigation property of BusinessRoleRestrictionFields in the sap_self service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictionFields",
+        "navigationProperty": {
+          "name": "RestrictionValues",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "RestrictionTypeAssignmentUUID",
+            "newParameterName": "restrictiontypeassignmentuuid"
+          },
+          {
+            "name": "FieldName",
+            "newParameterName": "fieldname"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_restrictionfields_in_businessrolerestrictions_for_sap_self",
+    "title": "list_RestrictionFields_in_BusinessRoleRestrictions_for_sap_self",
+    "description": "Navigate from BusinessRoleRestrictions to related BusinessRoleRestrictionFieldsType entities via the 'RestrictionFields' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictions",
+        "navigationProperty": {
+          "name": "RestrictionFields",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "count"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "RestrictionTypeAssignmentUUID",
+            "newParameterName": "restrictiontypeassignmentuuid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_restrictionfields_in_businessrolerestriction",
+    "title": "create_RestrictionFields_in_BusinessRoleRestrictions_for_sap_self",
+    "description": "Create a new BusinessRoleRestrictionFieldsType entity via the 'RestrictionFields' navigation property of BusinessRoleRestrictions. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sap_self tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictions",
+        "navigationProperty": {
+          "name": "RestrictionFields",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "BusinessRoleID",
+              "newParameterName": "businessroleid_2"
+            },
+            {
+              "name": "RestrictionTypeAssignmentUUID",
+              "newParameterName": "restrictiontypeassignmentuuid_2"
+            },
+            {
+              "name": "FieldName",
+              "newParameterName": "fieldname"
+            },
+            {
+              "name": "MaintainStatus",
+              "newParameterName": "maintainstatus"
+            },
+            {
+              "name": "IsLeading",
+              "newParameterName": "isleading"
+            },
+            {
+              "name": "RestrictionValues",
+              "newParameterName": "restrictionvalues"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "RestrictionTypeAssignmentUUID",
+            "newParameterName": "restrictiontypeassignmentuuid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "odata-entityid"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count_restrictionfields_in_businessrolerestrictions_for_sap_self",
+    "title": "count_RestrictionFields_in_BusinessRoleRestrictions_for_sap_self",
+    "description": "Count BusinessRoleRestrictionFieldsType entities accessible via the 'RestrictionFields' navigation property of BusinessRoleRestrictions in the sap_self service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoleRestrictions",
+        "navigationProperty": {
+          "name": "RestrictionFields",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          },
+          {
+            "name": "RestrictionTypeAssignmentUUID",
+            "newParameterName": "restrictiontypeassignmentuuid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_businesscatalogs_in_businessroles_for_sap_self",
+    "title": "list_BusinessCatalogs_in_BusinessRoles_for_sap_self",
+    "description": "Navigate from BusinessRoles to related BusinessRoleBusinessCatalogsType entities via the 'BusinessCatalogs' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "BusinessCatalogs",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "count"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_businesscatalogs_in_businessroles_for_sap_self",
+    "title": "create_BusinessCatalogs_in_BusinessRoles_for_sap_self",
+    "description": "Create a new BusinessRoleBusinessCatalogsType entity via the 'BusinessCatalogs' navigation property of BusinessRoles. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sap_self tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "BusinessCatalogs",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "BusinessRoleID",
+              "newParameterName": "businessroleid_2"
+            },
+            {
+              "name": "BusinessCatalogID",
+              "newParameterName": "businesscatalogid"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "odata-entityid"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count_businesscatalogs_in_businessroles_for_sap_self",
+    "title": "count_BusinessCatalogs_in_BusinessRoles_for_sap_self",
+    "description": "Count BusinessRoleBusinessCatalogsType entities accessible via the 'BusinessCatalogs' navigation property of BusinessRoles in the sap_self service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "BusinessCatalogs",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_businessusers_in_businessroles_for_sap_self",
+    "title": "list_BusinessUsers_in_BusinessRoles_for_sap_self",
+    "description": "Navigate from BusinessRoles to related BusinessRoleBusinessUsersType entities via the 'BusinessUsers' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "BusinessUsers",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "count"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_businessusers_in_businessroles_for_sap_self",
+    "title": "create_BusinessUsers_in_BusinessRoles_for_sap_self",
+    "description": "Create a new BusinessRoleBusinessUsersType entity via the 'BusinessUsers' navigation property of BusinessRoles. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sap_self tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "BusinessUsers",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "BusinessRoleID",
+              "newParameterName": "businessroleid_2"
+            },
+            {
+              "name": "UserID",
+              "newParameterName": "userid"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "odata-entityid"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count_businessusers_in_businessroles_for_sap_self",
+    "title": "count_BusinessUsers_in_BusinessRoles_for_sap_self",
+    "description": "Count BusinessRoleBusinessUsersType entities accessible via the 'BusinessUsers' navigation property of BusinessRoles in the sap_self service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "BusinessUsers",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_derivedbusinessroles_in_businessroles_for_sap_self",
+    "title": "list_DerivedBusinessRoles_in_BusinessRoles_for_sap_self",
+    "description": "Navigate from BusinessRoles to related BusinessRoleDerivedRolesType entities via the 'DerivedBusinessRoles' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "DerivedBusinessRoles",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "count"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_derivedbusinessroles_in_businessroles_for_sap_self",
+    "title": "create_DerivedBusinessRoles_in_BusinessRoles_for_sap_self",
+    "description": "Create a new BusinessRoleDerivedRolesType entity via the 'DerivedBusinessRoles' navigation property of BusinessRoles. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sap_self tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "DerivedBusinessRoles",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "BusinessRoleID",
+              "newParameterName": "businessroleid_2"
+            },
+            {
+              "name": "DerivedBusinessRoleID",
+              "newParameterName": "derivedbusinessroleid"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "odata-entityid"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count_derivedbusinessroles_in_businessroles_for_sap_self",
+    "title": "count_DerivedBusinessRoles_in_BusinessRoles_for_sap_self",
+    "description": "Count BusinessRoleDerivedRolesType entities accessible via the 'DerivedBusinessRoles' navigation property of BusinessRoles in the sap_self service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "DerivedBusinessRoles",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_iamapps_in_businessroles_for_sap_self",
+    "title": "list_IAMApps_in_BusinessRoles_for_sap_self",
+    "description": "Navigate from BusinessRoles to related BusinessRoleIAMAppsType entities via the 'IAMApps' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "IAMApps",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "count"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_iamapps_in_businessroles_for_sap_self",
+    "title": "create_IAMApps_in_BusinessRoles_for_sap_self",
+    "description": "Create a new BusinessRoleIAMAppsType entity via the 'IAMApps' navigation property of BusinessRoles. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sap_self tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "IAMApps",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "BusinessRoleID",
+              "newParameterName": "businessroleid_2"
+            },
+            {
+              "name": "AppID",
+              "newParameterName": "appid"
+            },
+            {
+              "name": "AppType",
+              "newParameterName": "apptype"
+            },
+            {
+              "name": "AssignmentType",
+              "newParameterName": "assignmenttype"
+            },
+            {
+              "name": "IsActive",
+              "newParameterName": "isactive"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "odata-entityid"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count_iamapps_in_businessroles_for_sap_self",
+    "title": "count_IAMApps_in_BusinessRoles_for_sap_self",
+    "description": "Count BusinessRoleIAMAppsType entities accessible via the 'IAMApps' navigation property of BusinessRoles in the sap_self service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "IAMApps",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_launchpadspaces_in_businessroles_for_sap_self",
+    "title": "list_LaunchpadSpaces_in_BusinessRoles_for_sap_self",
+    "description": "Navigate from BusinessRoles to related BusinessRoleLaunchpadSpacesType entities via the 'LaunchpadSpaces' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "LaunchpadSpaces",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "count"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_launchpadspaces_in_businessroles_for_sap_self",
+    "title": "create_LaunchpadSpaces_in_BusinessRoles_for_sap_self",
+    "description": "Create a new BusinessRoleLaunchpadSpacesType entity via the 'LaunchpadSpaces' navigation property of BusinessRoles. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sap_self tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "LaunchpadSpaces",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "BusinessRoleID",
+              "newParameterName": "businessroleid_2"
+            },
+            {
+              "name": "SpaceID",
+              "newParameterName": "spaceid"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "odata-entityid"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count_launchpadspaces_in_businessroles_for_sap_self",
+    "title": "count_LaunchpadSpaces_in_BusinessRoles_for_sap_self",
+    "description": "Count BusinessRoleLaunchpadSpacesType entities accessible via the 'LaunchpadSpaces' navigation property of BusinessRoles in the sap_self service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "LaunchpadSpaces",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "list_restrictions_in_businessroles_for_sap_self",
+    "title": "list_Restrictions_in_BusinessRoles_for_sap_self",
+    "description": "Navigate from BusinessRoles to related BusinessRoleRestrictionsType entities via the 'Restrictions' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "Restrictions",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "count"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "retry-after"
+        },
+        {
+          "name": "asyncresult"
+        },
+        {
+          "name": "odata-error"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  },
+  {
+    "name": "create_restrictions_in_businessroles_for_sap_self",
+    "title": "create_Restrictions_in_BusinessRoles_for_sap_self",
+    "description": "Create a new BusinessRoleRestrictionsType entity via the 'Restrictions' navigation property of BusinessRoles. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sap_self tool first.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "Restrictions",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "BusinessRoleID",
+              "newParameterName": "businessroleid_2"
+            },
+            {
+              "name": "RestrictionTypeAssignmentUUID",
+              "newParameterName": "restrictiontypeassignmentuuid"
+            },
+            {
+              "name": "AccessCategory",
+              "newParameterName": "accesscategory"
+            },
+            {
+              "name": "RestrictionType",
+              "newParameterName": "restrictiontype"
+            },
+            {
+              "name": "RestrictionFields",
+              "newParameterName": "restrictionfields"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "etag"
+        },
+        {
+          "name": "location"
+        },
+        {
+          "name": "odata-entityid"
+        },
+        {
+          "name": "preference-applied"
+        },
+        {
+          "name": "vary"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": false
+    }
+  },
+  {
+    "name": "count_restrictions_in_businessroles_for_sap_self",
+    "title": "count_Restrictions_in_BusinessRoles_for_sap_self",
+    "description": "Count BusinessRoleRestrictionsType entities accessible via the 'Restrictions' navigation property of BusinessRoles in the sap_self service. Returns the total number of matching entities.",
+    "odataType": {
+      "entitySet": {
+        "name": "BusinessRoles",
+        "navigationProperty": {
+          "name": "Restrictions",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "BusinessRoleID",
+            "newParameterName": "businessroleid"
+          }
+        ]
+      },
+      "responseHeaders": [
+        {
+          "name": "age"
+        },
+        {
+          "name": "cache-control"
+        },
+        {
+          "name": "expires"
+        },
+        {
+          "name": "last-modified"
+        },
+        {
+          "name": "x-request-id"
+        },
+        {
+          "name": "x-correlation-id"
+        },
+        {
+          "name": "content-type"
+        },
+        {
+          "name": "content-encoding"
+        },
+        {
+          "name": "content-language"
+        },
+        {
+          "name": "content-length"
+        },
+        {
+          "name": "odata-version"
+        },
+        {
+          "name": "sap-messages"
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true
+    }
+  }
+]

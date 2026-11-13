@@ -1,0 +1,24 @@
+apiVersion: asset.sap/v1
+kind: Asset
+type: mcp-server
+
+metadata:
+  name: sap-s4-scim-mcp-server
+  description: >
+    Exposes SAP S/4HANA SCIM User Management read operations as MCP tools.
+    Enables the agent to fetch user identities, group memberships, and
+    role assignments across environments.
+  version: "1.0.0"
+  translation: mcp-translation/translation.json
+  apiSpec: mcp-translation/api-spec.json
+
+provides:
+  apis:
+    - name: sap-s4-scim-mcp-server
+      kind: mcp-server
+      ordId: customer.build:apiResource:sap-role-optimization-6f66f.sap-s4-scim-mcp-server:v1
+
+requires:
+  - name: CE_APS_IAM_API_SCIM
+    kind: api
+    ordId: sap.s4:apiResource:CE_APS_IAM_API_SCIM:v1
